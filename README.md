@@ -1,34 +1,26 @@
-MODELS CREATED:
+Let me format this model organization structure in a clear, readable markdown format:
 
-Users:
+# Database Model Organization
 
-users + user_feedback_and_ratings
-Rationale: Both deal with user-related data and interactions
+## Users & Feedback
+- **Models**: `users`, `user_feedback_and_ratings`
+- **Rationale**: Centralizes user-related data and interaction history
 
+## Communications
+- **Models**: `chats`, `notifications`, `support_tickets`
+- **Rationale**: Manages all forms of communication and messaging within the system
 
-Communications:
+## Loan Management
+- **Models**: `documents`, `loans`
+- **Rationale**: Handles loan processing and associated documentation, focusing on user submissions
 
-chats + notifications + support_tickets
-Rationale: All handle different forms of communication/messaging
+## Intelligence
+- **Models**: `nlu_models`, `faqs`
+- **Rationale**: Powers system understanding and automated responses to user queries
 
+## Monitoring
+- **Models**: `analytics`, `audit_logs`
+- **Rationale**: Provides comprehensive system monitoring and data tracking capabilities
 
-Loan Management:
-
-documents + loans
-Rationale: Loans heavily depend on documents, and both deal with user submissions
-
-
-Intelligence:
-
-nlu_models + faqs
-Rationale: Both deal with understanding and responding to user queries
-
-
-Monitoring:
-
-analytics + audit_logs
-Rationale: Both deal with system monitoring and data tracking
-
-
-Platforms - Foundational and interfaces with external services
-
+## Platforms
+- **Purpose**: Serves as foundational infrastructure and manages interfaces with external services
