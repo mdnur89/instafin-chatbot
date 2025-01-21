@@ -1,0 +1,87 @@
+{% extends 'monitoring/base.html' %}
+{% load static %}
+
+{% block monitoring_content %}
+<div class="bg-white shadow rounded-lg">
+    <!-- Filter Form -->
+    <div class="p-4 border-b border-gray-200">
+        <form method="get" class="space-y-4">
+            {{ filter_form.as_p }}
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">
+                Apply Filters
+            </button>
+        </form>
+    </div>
+
+    <!-- Statistics Summary -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 border-b border-gray-200">
+        <div class="bg-gray-50 p-4 rounded">
+            <h4 class="text-sm font-medium text-gray-500">Total Events</h4>
+            <p class="text-2xl font-bold">{{ stats.total_events }}</p>
+        </div>
+        <div class="bg-gray-50 p-4 rounded">
+            <h4 class="text-sm font-medium text-gray-500">Success Rate</h4>
+            <p class="text-2xl font-bold">{{ stats.success_rate|floatformat:1 }}%</p>
+        </div>
+        <div class="bg-gray-50 p-4 rounded">
+            <h4 class="text-sm font-medium text-gray-500">Avg Duration</h4>
+            <p class="text-2xl font-bold">{{ stats.avg_duration|default:"N/A" }}</p>
+        </div>
+    </div>
+
+    <!-- Events Table -->
+    <div class="overflow-x-auto">
+        <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+                <tr>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Event Type</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">User</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Platform</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Success</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Duration</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Timestamp</th>
+                </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+                {% for event in events %}
+                <tr>
+                    <td class="px-6 py-4">{{ event.get_event_type_display }}</td>
+                    <td class="px-6 py-4">{{ event.user|default:"Anonymous" }}</td>
+                    <td class="px-6 py-4">{{ event.platform }}</td>
+                    <td class="px-6 py-4">
+                        <span class="px-2 py-1 text-xs rounded-full {% if event.success %}bg-green-100 text-green-800{% else %}bg-red-100 text-red-800{% endif %}">
+                            {{ event.success|yesno:"Success,Failed" }}
+                        </span>
+                    </td>
+                    <td class="px-6 py-4">{{ event.duration|default:"N/A" }}</td>
+                    <td class="px-6 py-4">{{ event.timestamp }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="6" class="px-6 py-4 text-center text-gray-500">No events found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pagination -->
+    {% if is_paginated %}
+    <div class="px-6 py-4 border-t border-gray-200">
+        <nav class="flex justify-between">
+            {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}" class="text-blue-500">Previous</a>
+            {% endif %}
+            
+            <span class="text-gray-600">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+            </span>
+
+            {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class="text-blue-500">Next</a>
+            {% endif %}
+        </nav>
+    </div>
+    {% endif %}
+</div>
+{% endblock %} 

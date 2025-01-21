@@ -1,0 +1,42 @@
+{% extends 'communications/base.html' %}
+
+{% block communications_content %}
+<div class="bg-white shadow rounded-lg">
+    <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+        <h2 class="text-xl font-semibold text-gray-800">Notification Templates</h2>
+        <a href="{% url 'communications:notification_template_create' %}" 
+           class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+            Create Template
+        </a>
+    </div>
+    
+    <div class="divide-y divide-gray-200">
+        {% for template in templates %}
+        <div class="p-6">
+            <div class="flex justify-between items-start">
+                <div>
+                    <h3 class="text-lg font-medium text-gray-900">{{ template.name }}</h3>
+                    <p class="mt-1 text-sm text-gray-500">{{ template.subject }}</p>
+                </div>
+                <span class="px-3 py-1 rounded-full text-sm font-medium
+                    {% if template.is_active %}bg-green-100 text-green-800{% else %}bg-gray-100 text-gray-800{% endif %}">
+                    {{ template.get_channel_display }}
+                </span>
+            </div>
+            <div class="mt-4 text-sm text-gray-600">
+                {{ template.content|truncatewords:50 }}
+            </div>
+            <div class="mt-4 flex space-x-4">
+                <a href="#" class="text-sm text-blue-600 hover:text-blue-800">Edit</a>
+                <a href="{% url 'communications:send_bulk_notification' %}?template={{ template.id }}" 
+                   class="text-sm text-blue-600 hover:text-blue-800">Send Bulk Notification</a>
+            </div>
+        </div>
+        {% empty %}
+        <div class="p-6 text-center text-gray-500">
+            No notification templates found.
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %} 

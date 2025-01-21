@@ -1,0 +1,95 @@
+{% extends 'communications/base.html' %}
+
+{% block communications_content %}
+<div class="bg-white shadow rounded-lg">
+    <div class="px-6 py-4 border-b border-gray-200">
+        <div class="flex justify-between items-start">
+            <div>
+                <h2 class="text-xl font-semibold text-gray-800">{{ ticket.subject }}</h2>
+                <p class="mt-1 text-sm text-gray-500">{{ ticket.ticket_number }}</p>
+            </div>
+            <div class="flex space-x-2">
+                <span class="px-3 py-1 rounded-full text-sm font-medium
+                    {% if ticket.priority == 'high' %}bg-red-100 text-red-800
+                    {% elif ticket.priority == 'medium' %}bg-yellow-100 text-yellow-800
+                    {% else %}bg-blue-100 text-blue-800{% endif %}">
+                    {{ ticket.get_priority_display }}
+                </span>
+                <span class="px-3 py-1 rounded-full text-sm font-medium
+                    {% if ticket.status == 'resolved' %}bg-green-100 text-green-800
+                    {% elif ticket.status == 'closed' %}bg-gray-100 text-gray-800
+                    {% else %}bg-yellow-100 text-yellow-800{% endif %}">
+                    {{ ticket.get_status_display }}
+                </span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="p-6 border-b border-gray-200">
+        <div class="prose max-w-none">
+            {{ ticket.description|linebreaks }}
+        </div>
+        <div class="mt-4 text-sm text-gray-500">
+            Submitted by {{ ticket.user.get_full_name|default:ticket.user.email }} 
+            on {{ ticket.created_at|date:"F j, Y, g:i a" }}
+        </div>
+    </div>
+    
+    <div class="divide-y divide-gray-200">
+        {% for response in responses %}
+        <div class="p-6 {% if response.responder.is_staff %}bg-blue-50{% endif %}">
+            <div class="flex items-start space-x-3">
+                <div class="flex-1">
+                    <div class="flex justify-between">
+                        <span class="font-medium text-gray-900">
+                            {{ response.responder.get_full_name|default:response.responder.email }}
+                        </span>
+                        <span class="text-sm text-gray-500">
+                            {{ response.created_at|date:"F j, Y, g:i a" }}
+                        </span>
+                    </div>
+                    <div class="mt-2 prose max-w-none">
+                        {{ response.content|linebreaks }}
+                    </div>
+                    {% if response.attachment %}
+                    <div class="mt-2">
+                        <a href="{{ response.attachment.url }}" 
+                           class="text-sm text-blue-600 hover:text-blue-800"
+                           target="_blank">
+                            View Attachment
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+    {% if ticket.status != 'closed' %}
+    <div class="p-6 bg-gray-50">
+        <h3 class="text-lg font-medium text-gray-900 mb-4">Add Response</h3>
+        <form method="post" enctype="multipart/form-data" class="space-y-4">
+            {% csrf_token %}
+            <div>
+                {{ form.content }}
+                {% if form.content.errors %}
+                <p class="mt-1 text-sm text-red-600">{{ form.content.errors.0 }}</p>
+                {% endif %}
+            </div>
+            <div class="flex items-center justify-between">
+                <div>
+                    {{ form.attachment }}
+                    {% if form.attachment.errors %}
+                    <p class="mt-1 text-sm text-red-600">{{ form.attachment.errors.0 }}</p>
+                    {% endif %}
+                </div>
+                <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+                    Submit Response
+                </button>
+            </div>
+        </form>
+    </div>
+    {% endif %}
+</div>
+{% endblock %} 

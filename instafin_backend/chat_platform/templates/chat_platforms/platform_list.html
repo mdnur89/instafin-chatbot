@@ -1,0 +1,50 @@
+<!-- platforms/templates/platforms/platform_list.html -->
+{% extends 'chat_platforms/base.html' %}
+
+{% block title %}Platforms List{% endblock %}
+
+{% block content %}
+<div class="bg-white shadow overflow-hidden sm:rounded-lg">
+    <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
+        <div class="flex justify-between items-center">
+            <h3 class="text-lg leading-6 font-medium text-gray-900">
+                Messaging Platforms
+            </h3>
+            <a href="{% url 'platform_create' %}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                Add Platform
+            </a>
+        </div>
+    </div>
+    
+    <div class="bg-white">
+        <ul class="divide-y divide-gray-200">
+            {% for platform in platforms %}
+            <li class="px-4 py-4 sm:px-6">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        {% if platform.icon %}
+                            <img src="{{ platform.icon.url }}" alt="{{ platform.name }}" class="h-10 w-10 rounded-full">
+                        {% endif %}
+                        <div class="ml-3">
+                            <p class="text-sm font-medium text-gray-900">{{ platform.get_name_display }}</p>
+                            <p class="text-sm text-gray-500">Version: {{ platform.api_version }}</p>
+                        </div>
+                    </div>
+                    <div class="flex space-x-2">
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full {% if platform.is_active %}bg-green-100 text-green-800{% else %}bg-red-100 text-red-800{% endif %}">
+                            {{ platform.is_active|yesno:"Active,Inactive" }}
+                        </span>
+                        <a href="{% url 'platform_detail' platform.id %}" class="text-indigo-600 hover:text-indigo-900">View</a>
+                        <a href="{% url 'platform_update' platform.id %}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                    </div>
+                </div>
+            </li>
+            {% empty %}
+            <li class="px-4 py-4 sm:px-6 text-center text-gray-500">
+                No platforms configured yet.
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

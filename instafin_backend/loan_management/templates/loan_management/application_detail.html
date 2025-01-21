@@ -1,0 +1,126 @@
+{% extends 'loan_management/base.html' %}
+
+{% block loan_management_content %}
+<div class="space-y-6">
+    <!-- Application Overview -->
+    <div class="bg-white shadow rounded-lg p-6">
+        <div class="flex justify-between items-start">
+            <div>
+                <h2 class="text-xl font-semibold text-gray-900">Loan Application #{{ application.id }}</h2>
+                <p class="mt-1 text-sm text-gray-500">Submitted on {{ application.created_at|date:"M d, Y" }}</p>
+            </div>
+            <span class="px-3 py-1 rounded-full text-sm font-semibold
+                {% if application.status == 'approved' %}bg-green-100 text-green-800
+                {% elif application.status == 'rejected' %}bg-red-100 text-red-800
+                {% else %}bg-yellow-100 text-yellow-800{% endif %}">
+                {{ application.get_status_display }}
+            </span>
+        </div>
+
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+                <h3 class="text-sm font-medium text-gray-500">Loan Details</h3>
+                <dl class="mt-2 space-y-2">
+                    <div>
+                        <dt class="text-sm text-gray-500">Product</dt>
+                        <dd class="text-sm font-medium text-gray-900">{{ application.loan_product.name }}</dd>
+                    </div>
+                    <div>
+                        <dt class="text-sm text-gray-500">Amount Requested</dt>
+                        <dd class="text-sm font-medium text-gray-900">${{ application.amount_requested }}</dd>
+                    </div>
+                    <div>
+                        <dt class="text-sm text-gray-500">Purpose</dt>
+                        <dd class="text-sm font-medium text-gray-900">{{ application.purpose }}</dd>
+                    </div>
+                </dl>
+            </div>
+
+            {% if risk_assessment %}
+            <div>
+                <h3 class="text-sm font-medium text-gray-500">Risk Assessment</h3>
+                <dl class="mt-2 space-y-2">
+                    <div>
+                        <dt class="text-sm text-gray-500">Credit Score</dt>
+                        <dd class="text-sm font-medium text-gray-900">{{ risk_assessment.credit_score }}</dd>
+                    </div>
+                    <div>
+                        <dt class="text-sm text-gray-500">Risk Category</dt>
+                        <dd class="text-sm font-medium text-gray-900">{{ risk_assessment.get_risk_category_display }}</dd>
+                    </div>
+                </dl>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Documents Section -->
+    <div class="bg-white shadow rounded-lg p-6">
+        <div class="flex justify-between items-center mb-4">
+            <h3 class="text-lg font-medium text-gray-900">Documents</h3>
+            <a href="{% url 'loan_management:document_upload' application.pk %}" 
+               class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700">
+                Upload Document
+            </a>
+        </div>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Type</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Uploaded</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    {% for doc in documents %}
+                    <tr>
+                        <td class="px-6 py-4 text-sm text-gray-900">{{ doc.get_document_type_display }}</td>
+                        <td class="px-6 py-4">
+                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full
+                                {% if doc.verification_status == 'verified' %}bg-green-100 text-green-800
+                                {% elif doc.verification_status == 'rejected' %}bg-red-100 text-red-800
+                                {% else %}bg-yellow-100 text-yellow-800{% endif %}">
+                                {{ doc.get_verification_status_display }}
+                            </span>
+                        </td>
+                        <td class="px-6 py-4 text-sm text-gray-900">{{ doc.uploaded_at|date:"M d, Y" }}</td>
+                        <td class="px-6 py-4 text-sm font-medium">
+                            <a href="{{ doc.file.url }}" class="text-blue-600 hover:text-blue-900" target="_blank">View</a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="4" class="px-6 py-4 text-center text-sm text-gray-500">
+                            No documents uploaded yet.
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Communication Log -->
+    <div class="bg-white shadow rounded-lg p-6">
+        <h3 class="text-lg font-medium text-gray-900 mb-4">Communication History</h3>
+        <div class="space-y-4">
+            {% for comm in communications %}
+            <div class="flex space-x-3">
+                <div class="flex-1 bg-gray-50 rounded-lg p-4">
+                    <div class="flex justify-between items-start">
+                        <span class="text-sm font-medium text-gray-900">{{ comm.get_communication_type_display }}</span>
+                        <span class="text-sm text-gray-500">{{ comm.sent_at|date:"M d, Y H:i" }}</span>
+                    </div>
+                    <p class="mt-1 text-sm text-gray-600">{{ comm.message }}</p>
+                </div>
+            </div>
+            {% empty %}
+            <p class="text-sm text-gray-500">No communications yet.</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %} 

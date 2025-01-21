@@ -1,0 +1,49 @@
+{% extends 'loan_management/base.html' %}
+
+{% block loan_management_content %}
+<div class="max-w-2xl mx-auto">
+    <div class="bg-white shadow rounded-lg p-6">
+        <h2 class="text-xl font-semibold text-gray-900 mb-6">Request Document</h2>
+        <p class="text-sm text-gray-500 mb-6">
+            For Loan Application #{{ application.id }}
+        </p>
+        
+        <form method="post" class="space-y-6">
+            {% csrf_token %}
+            
+            {% for field in form %}
+            <div>
+                <label for="{{ field.id_for_label }}" 
+                       class="block text-sm font-medium text-gray-700">
+                    {{ field.label }}
+                </label>
+                <div class="mt-1">
+                    {{ field }}
+                    {% if field.errors %}
+                    <div class="mt-1">
+                        {% for error in field.errors %}
+                        <p class="text-red-600 text-sm">{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                {% if field.help_text %}
+                <p class="mt-2 text-sm text-gray-500">{{ field.help_text }}</p>
+                {% endif %}
+            </div>
+            {% endfor %}
+            
+            <div class="flex justify-end space-x-3">
+                <a href="{% url 'loan_management:application_detail' application.pk %}" 
+                   class="bg-gray-100 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-200">
+                    Cancel
+                </a>
+                <button type="submit" 
+                        class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                    Request Document
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %} 

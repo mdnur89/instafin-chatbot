@@ -1,0 +1,8 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="p-6">
+    {% block monitoring_content %}{% endblock %}
+</div>
+{% block_extra_js % }{% endblock %} 

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <div class="mb-8">
+        <nav class="flex space-x-4">
+            <a href="{% url 'communications:chat_session_list' %}" 
+               class="px-4 py-2 rounded-md {% if request.resolver_match.url_name == 'chat_session_list' %}bg-blue-600 text-white{% else %}text-gray-700 hover:bg-gray-100{% endif %}">
+                Chats
+            </a>
+            {% if request.user.is_staff %}
+            <a href="{% url 'communications:notification_template_list' %}"
+               class="px-4 py-2 rounded-md {% if 'notification' in request.resolver_match.url_name %}bg-blue-600 text-white{% else %}text-gray-700 hover:bg-gray-100{% endif %}">
+                Notifications
+            </a>
+            {% endif %}
+            <a href="{% url 'communications:ticket_list' %}"
+               class="px-4 py-2 rounded-md {% if 'ticket' in request.resolver_match.url_name %}bg-blue-600 text-white{% else %}text-gray-700 hover:bg-gray-100{% endif %}">
+                Support Tickets
+            </a>
+        </nav>
+    </div>
+
+    {% if messages %}
+    <div class="mb-8">
+        {% for message in messages %}
+        <div class="p-4 rounded-md {% if message.tags == 'success' %}bg-green-100 text-green-700{% elif message.tags == 'error' %}bg-red-100 text-red-700{% else %}bg-blue-100 text-blue-700{% endif %}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    
+    {% block communications_content %}{% endblock %}
+</div>
+{% endblock %} 

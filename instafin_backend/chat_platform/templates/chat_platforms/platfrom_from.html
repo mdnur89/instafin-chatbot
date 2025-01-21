@@ -1,0 +1,46 @@
+<!-- platforms/templates/platforms/platform_form.html -->
+{% extends 'chat_platforms/base.html' %}
+
+{% block title %}{% if form.instance.pk %}Edit{% else %}Add{% endif %} Platform{% endblock %}
+
+{% block content %}
+<div class="bg-white shadow overflow-hidden sm:rounded-lg">
+    <div class="px-4 py-5 sm:px-6">
+        <h3 class="text-lg leading-6 font-medium text-gray-900">
+            {% if form.instance.pk %}Edit{% else %}Add{% endif %} Platform
+        </h3>
+    </div>
+    
+    <div class="border-t border-gray-200 px-4 py-5 sm:px-6">
+        <form method="post" enctype="multipart/form-data" class="space-y-6">
+            {% csrf_token %}
+            
+            {% for field in form %}
+            <div>
+                <label for="{{ field.id_for_label }}" class="block text-sm font-medium text-gray-700">
+                    {{ field.label }}
+                </label>
+                <div class="mt-1">
+                    {{ field }}
+                    {% if field.help_text %}
+                    <p class="mt-2 text-sm text-gray-500">{{ field.help_text }}</p>
+                    {% endif %}
+                    {% if field.errors %}
+                    <p class="mt-2 text-sm text-red-600">{{ field.errors.0 }}</p>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+
+            <div class="flex justify-end space-x-3">
+                <a href="{% url 'platform_list' %}" class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                    Cancel
+                </a>
+                <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                    {% if form.instance.pk %}Update{% else %}Create{% endif %} Platform
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

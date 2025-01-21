@@ -1,0 +1,142 @@
+{% extends 'monitoring/base.html' %}
+{% load static %}
+
+{% block monitoring_content %}
+<div class="space-y-6" role="main" aria-label="Monitoring Dashboard">
+    <!-- Summary Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- User Metrics -->
+        <div class="bg-white p-6 rounded-lg shadow" role="region" aria-label="User Metrics">
+            <h3 class="text-lg font-medium text-gray-900 mb-4">User Metrics</h3>
+            <div class="space-y-4">
+                <div>
+                    <p class="text-sm text-gray-500">Total Users</p>
+                    <p class="text-2xl font-bold">{{ metrics.total_users|escape }}</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Active Users</p>
+                    <p class="text-2xl font-bold">{{ metrics.active_users|escape }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Metrics -->
+        <div class="bg-white p-6 rounded-lg shadow" role="region" aria-label="Chat Metrics">
+            <h3 class="text-lg font-medium text-gray-900 mb-4">Chat Metrics</h3>
+            <div class="space-y-4">
+                <div>
+                    <p class="text-sm text-gray-500">Total Chats</p>
+                    <p class="text-2xl font-bold">{{ metrics.total_chats|escape }}</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Completed Chats</p>
+                    <p class="text-2xl font-bold">{{ metrics.completed_chats|escape }}</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Average Duration</p>
+                    <p class="text-2xl font-bold">{{ metrics.avg_chat_duration|floatformat:1|escape }}s</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loan Metrics -->
+        <div class="bg-white p-6 rounded-lg shadow" role="region" aria-label="Loan Metrics">
+            <h3 class="text-lg font-medium text-gray-900 mb-4">Loan Metrics</h3>
+            <div class="space-y-4">
+                <div>
+                    <p class="text-sm text-gray-500">Applications</p>
+                    <p class="text-2xl font-bold">{{ metrics.loan_applications|escape }}</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Approved</p>
+                    <p class="text-2xl font-bold text-green-600" aria-label="Approved loans: {{ metrics.approved_loans }}">
+                        {{ metrics.approved_loans|escape }}
+                        <span class="sr-only">approved loans</span>
+                    </p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Rejected</p>
+                    <p class="text-2xl font-bold text-red-600" aria-label="Rejected loans: {{ metrics.rejected_loans }}">
+                        {{ metrics.rejected_loans|escape }}
+                        <span class="sr-only">rejected loans</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Historical Charts -->
+    <div class="bg-white p-6 rounded-lg shadow">
+        <h3 class="text-lg font-medium text-gray-900 mb-4">Historical Trends</h3>
+        <div class="relative min-h-[24rem] max-h-[32rem]" aria-label="Historical trends chart">
+            <div id="chartLoading" class="absolute inset-0 flex items-center justify-center bg-white bg-opacity-90 hidden">
+                <p class="text-gray-500">Loading chart data...</p>
+            </div>
+            <canvas id="trendsChart"></canvas>
+        </div>
+    </div>
+
+    <!-- System Health -->
+    <div class="bg-white p-6 rounded-lg shadow" role="region" aria-label="System Health">
+        <h3 class="text-lg font-medium text-gray-900 mb-4">System Health</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+                <p class="text-sm text-gray-500">Model Accuracy</p>
+                <p class="text-2xl font-bold">{{ metrics.model_accuracy|floatformat:1|escape }}%</p>
+            </div>
+            <div>
+                <p class="text-sm text-gray-500">System Errors (24h)</p>
+                <div class="flex items-center">
+                    <p class="text-2xl font-bold {% if metrics.system_errors > 0 %}text-red-600{% endif %}" 
+                       role="status" 
+                       aria-label="System errors in the last 24 hours: {{ metrics.system_errors }}">
+                        {{ metrics.system_errors|escape }}
+                    </p>
+                    {% if metrics.system_errors > 0 %}
+                    <span class="ml-2 text-sm text-red-600">
+                        <span class="sr-only">Warning:</span>
+                        System errors detected
+                    </span>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('trendsChart').getContext('2d');
+    const historicalData = {{ historical_data_json|safe }};
+    
+    const data = {
+        labels: historicalData.map(d => d.date),
+        datasets: [{
+            label: 'Active Users',
+            data: historicalData.map(d => d.active_users),
+            borderColor: 'rgb(59, 130, 246)',
+            tension: 0.1
+        }, {
+            label: 'Loan Applications',
+            data: historicalData.map(d => d.loan_applications),
+            borderColor: 'rgb(16, 185, 129)',
+            tension: 0.1
+        }]
+    };
+
+    new Chart(ctx, {
+        type: 'line',
+        data: data,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: {
+                intersect: false,
+                mode: 'index'
+            }
+        }
+    });
+</script>
+{% endblock %}
+{% endblock %}

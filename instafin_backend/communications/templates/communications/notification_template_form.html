@@ -1,0 +1,62 @@
+{% extends 'communications/base.html' %}
+
+{% block communications_content %}
+<div class="bg-white shadow rounded-lg">
+    <div class="px-6 py-4 border-b border-gray-200">
+        <h2 class="text-xl font-semibold text-gray-800">{{ title }}</h2>
+    </div>
+    
+    <div class="p-6">
+        <form method="post" class="space-y-6">
+            {% csrf_token %}
+            
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Name</label>
+                {{ form.name }}
+                {% if form.name.errors %}
+                <p class="mt-1 text-sm text-red-600">{{ form.name.errors.0 }}</p>
+                {% endif %}
+            </div>
+            
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Subject</label>
+                {{ form.subject }}
+                {% if form.subject.errors %}
+                <p class="mt-1 text-sm text-red-600">{{ form.subject.errors.0 }}</p>
+                {% endif %}
+            </div>
+            
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Content</label>
+                {{ form.content }}
+                {% if form.content.errors %}
+                <p class="mt-1 text-sm text-red-600">{{ form.content.errors.0 }}</p>
+                {% endif %}
+            </div>
+            
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Channel</label>
+                {{ form.channel }}
+                {% if form.channel.errors %}
+                <p class="mt-1 text-sm text-red-600">{{ form.channel.errors.0 }}</p>
+                {% endif %}
+            </div>
+            
+            <div class="flex items-center">
+                {{ form.is_active }}
+                <label class="ml-2 text-sm text-gray-700">Active</label>
+            </div>
+            
+            <div class="flex justify-end space-x-4">
+                <a href="{% url 'communications:notification_template_list' %}" 
+                   class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50">
+                    Cancel
+                </a>
+                <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+                    Save Template
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %} 

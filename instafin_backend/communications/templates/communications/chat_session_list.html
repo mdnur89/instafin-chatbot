@@ -1,0 +1,63 @@
+{% extends 'communications/base.html' %}
+
+{% block communications_content %}
+<div class="bg-white shadow rounded-lg">
+    <div class="px-6 py-4 border-b border-gray-200">
+        <h2 class="text-xl font-semibold text-gray-800">Chat Sessions</h2>
+    </div>
+    
+    <div class="divide-y divide-gray-200">
+        {% for session in sessions %}
+        <div class="p-6 hover:bg-gray-50">
+            <a href="{% url 'communications:chat_session_detail' session.id %}" class="block">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-900">
+                            {% if request.user == session.user %}
+                                Chat with Support
+                            {% else %}
+                                {{ session.user.get_full_name|default:session.user.email }}
+                            {% endif %}
+                        </h3>
+                        <p class="mt-1 text-sm text-gray-500">
+                            Started {{ session.started_at|timesince }} ago
+                        </p>
+                    </div>
+                    <span class="px-3 py-1 rounded-full text-sm font-medium
+                        {% if session.status == 'active' %}bg-green-100 text-green-800
+                        {% elif session.status == 'closed' %}bg-gray-100 text-gray-800
+                        {% else %}bg-yellow-100 text-yellow-800{% endif %}">
+                        {{ session.get_status_display }}
+                    </span>
+                </div>
+                <div class="mt-2">
+                    <span class="text-sm text-gray-600">{{ session.get_channel_type_display }}</span>
+                </div>
+            </a>
+        </div>
+        {% empty %}
+        <div class="p-6 text-center text-gray-500">
+            No chat sessions found.
+        </div>
+        {% endfor %}
+    </div>
+    
+    {% if sessions.has_other_pages %}
+    <div class="px-6 py-4 border-t border-gray-200">
+        <nav class="flex justify-center">
+            {% if sessions.has_previous %}
+            <a href="?page={{ sessions.previous_page_number }}" class="px-3 py-1 rounded-md text-gray-700 hover:bg-gray-100">&laquo; Previous</a>
+            {% endif %}
+            
+            <span class="px-3 py-1">
+                Page {{ sessions.number }} of {{ sessions.paginator.num_pages }}
+            </span>
+            
+            {% if sessions.has_next %}
+            <a href="?page={{ sessions.next_page_number }}" class="px-3 py-1 rounded-md text-gray-700 hover:bg-gray-100">Next &raquo;</a>
+            {% endif %}
+        </nav>
+    </div>
+    {% endif %}
+</div>
+{% endblock %} 

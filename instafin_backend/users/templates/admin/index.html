@@ -1,0 +1,83 @@
+{% extends 'unfold/layouts/base_simple.html' %}
+
+{% load i18n unfold %}
+
+{% block breadcrumbs %}{% endblock %}
+
+{% block title %}
+    {% trans 'Dashboard' %} | {{ site_title|default:_('InstaFin Admin') }}
+{% endblock %}
+
+{% block content %}
+    {# KPI Cards Row #}
+    {% component "unfold/components/flex.html" with class="gap-8 mb-8" %}
+        {% component "unfold/components/card.html" with class="lg:w-1/3" %}
+            {% component "unfold/components/text.html" with class="text-gray-500 mb-2" %}
+                {% trans "Total Users" %}
+            {% endcomponent %}
+            {% component "unfold/components/title.html" %}
+                {{ stats.total_users }}
+            {% endcomponent %}
+        {% endcomponent %}
+
+        {% component "unfold/components/card.html" with class="lg:w-1/3" %}
+            {% component "unfold/components/text.html" with class="text-gray-500 mb-2" %}
+                {% trans "Verified Users" %}
+            {% endcomponent %}
+            {% component "unfold/components/title.html" %}
+                {{ stats.verified_users }}
+            {% endcomponent %}
+        {% endcomponent %}
+
+        {% component "unfold/components/card.html" with class="lg:w-1/3" %}
+            {% component "unfold/components/text.html" with class="text-gray-500 mb-2" %}
+                {% trans "Active Users" %}
+            {% endcomponent %}
+            {% component "unfold/components/title.html" %}
+                {{ stats.active_users }}
+            {% endcomponent %}
+        {% endcomponent %}
+    {% endcomponent %}
+
+    {# Financial & Communication Metrics Row #}
+    {% component "unfold/components/flex.html" with class="gap-8 mb-8" %}
+        {% component "unfold/components/card.html" with class="lg:w-1/2" %}
+            {% component "unfold/components/text.html" with class="text-gray-500 mb-2" %}
+                {% trans "Average Credit Score" %}
+            {% endcomponent %}
+            {% component "unfold/components/title.html" %}
+                {{ stats.avg_credit_score }}
+            {% endcomponent %}
+        {% endcomponent %}
+
+        {% component "unfold/components/card.html" with class="lg:w-1/2" %}
+            {% component "unfold/components/text.html" with class="text-gray-500 mb-2" %}
+                {% trans "Recent Communications" %}
+            {% endcomponent %}
+            {% component "unfold/components/title.html" %}
+                {{ stats.recent_communications }}
+            {% endcomponent %}
+        {% endcomponent %}
+    {% endcomponent %}
+
+    {# Feedback Metrics Row #}
+    {% component "unfold/components/flex.html" with class="gap-8" %}
+        {% component "unfold/components/card.html" with class="lg:w-1/2" %}
+            {% component "unfold/components/text.html" with class="text-gray-500 mb-2" %}
+                {% trans "Average Rating" %}
+            {% endcomponent %}
+            {% component "unfold/components/title.html" %}
+                {{ stats.avg_rating }} / 5.0
+            {% endcomponent %}
+        {% endcomponent %}
+
+        {% component "unfold/components/card.html" with class="lg:w-1/2" %}
+            {% component "unfold/components/text.html" with class="text-gray-500 mb-2" %}
+                {% trans "Total Feedback" %}
+            {% endcomponent %}
+            {% component "unfold/components/title.html" %}
+                {{ stats.total_feedback }}
+            {% endcomponent %}
+        {% endcomponent %}
+    {% endcomponent %}
+{% endblock %}
