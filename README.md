@@ -1,5 +1,3 @@
-Let me format this model organization structure in a clear, readable markdown format:
-
 # Database Model Organization
 
 ## Users & Feedback
