@@ -181,3 +181,20 @@ class AuditLog(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
     details = models.JSONField(default=dict)
     ip_address = models.GenericIPAddressField(null=True)
+
+class DocumentType(models.Model):
+    """Types of documents that can be submitted"""
+    name = models.CharField(max_length=100, unique=True)
+    description = models.TextField(blank=True)
+    is_required = models.BooleanField(default=True)
+    validation_rules = models.JSONField(default=dict)
+    allowed_formats = models.JSONField(default=list)
+    max_file_size = models.IntegerField(help_text="Maximum file size in bytes")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ['name']

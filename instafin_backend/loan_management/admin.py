@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils.html import format_html
 from .models import (
     Document, LoanProduct, LoanApplication, LoanDocument,
-    RiskAssessment, CommunicationLog, DocumentRequest, AuditLog
+    RiskAssessment, CommunicationLog, DocumentRequest, AuditLog, DocumentType
 )
 
 class UnfoldAdminMixin:
@@ -62,3 +62,9 @@ class AuditLogAdmin(UnfoldAdminMixin, admin.ModelAdmin):
     list_filter = ('action',)
     search_fields = ('user__email', 'loan_application__user__email')
     readonly_fields = ('timestamp', 'ip_address')
+
+@admin.register(DocumentType)
+class DocumentTypeAdmin(UnfoldAdminMixin, admin.ModelAdmin):
+    list_display = ('name', 'is_required', 'created_at')
+    search_fields = ('name', 'description')
+    list_filter = ('is_required',)

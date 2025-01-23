@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
+from django.conf import settings
 
 
 # At the top of your models.py, add:
@@ -63,15 +64,39 @@ class User(AbstractUser):
         return f"{self.first_name} {self.last_name}"
 
 class UserProfile(models.Model):
-    """Detailed user profile information."""
+    """Extended user profile with age verification and parental controls"""
+    AGE_VERIFICATION_STATUS = [
+        ('pending', 'Pending Verification'),
+        ('verified', 'Age Verified'),
+        ('minor', 'Verified Minor'),
+    ]
+
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='profile')
+    date_of_birth = models.DateField(null=True)
+    age_verification_status = models.CharField(max_length=20, choices=AGE_VERIFICATION_STATUS, default='pending')
+    guardian_email = models.EmailField(null=True, blank=True)
+    guardian_phone = models.CharField(max_length=20, null=True, blank=True)
+    guardian_verified = models.BooleanField(default=False)
+    restricted_features = models.JSONField(default=list)
+    daily_transaction_limit = models.DecimalField(max_digits=10, decimal_places=2, null=True)
+    last_guardian_notification = models.DateTimeField(null=True)
     
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
-    profile_picture = models.ImageField(upload_to='profile_pictures/', null=True, blank=True)
-    employment_status = models.CharField(max_length=50, null=True)
-    income_range = models.CharField(max_length=50, null=True)
-    address = models.JSONField(null=True)
-    employment_details = models.JSONField(null=True)
-    metadata = models.JSONField(default=dict)
+    class Meta:
+        indexes = [
+            models.Index(fields=['age_verification_status']),
+        ]
+
+    def is_minor(self):
+        if not self.date_of_birth:
+            return False
+        today = timezone.now().date()
+        age = today.year - self.date_of_birth.year
+        if today.month < self.date_of_birth.month or (
+            today.month == self.date_of_birth.month and 
+            today.day < self.date_of_birth.day
+        ):
+            age -= 1
+        return age < 18
 
 class UserPreferences(models.Model):
     """User communication and system preferences."""
@@ -166,4 +191,78 @@ class UserEngagementMetrics(models.Model):
 
     class Meta:
         verbose_name_plural = 'User engagement metrics'
+
+class AgeVerification(models.Model):
+    """Handles age verification and parental controls"""
+    VERIFICATION_STATUS = [
+        ('pending', 'Pending Verification'),
+        ('verified', 'Age Verified'),
+        ('minor', 'Verified Minor'),
+        ('rejected', 'Verification Rejected'),
+    ]
+
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='age_verification'
+    )
+    date_of_birth = models.DateField()
+    verification_status = models.CharField(
+        max_length=20,
+        choices=VERIFICATION_STATUS,
+        default='pending'
+    )
+    verification_document = models.ForeignKey(
+        'loan_management.Document',
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name='age_verifications'
+    )
+    verified_at = models.DateTimeField(null=True)
+    verified_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name='verified_age_documents'
+    )
+
+    def __str__(self):
+        return f"{self.user.email} - {self.verification_status}"
+
+class GuardianControl(models.Model):
+    """Manages guardian relationships and controls"""
+    minor = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='guardian_control'
+    )
+    guardian = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='dependents'
+    )
+    daily_transaction_limit = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        null=True
+    )
+    restricted_features = models.JSONField(
+        default=list,
+        help_text="List of restricted features"
+    )
+    notification_preferences = models.JSONField(
+        default=dict,
+        help_text="Guardian notification preferences"
+    )
+    last_notification_sent = models.DateTimeField(null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['guardian', 'minor']),
+        ]
+
+    def __str__(self):
+        return f"Guardian: {self.guardian.email} - Minor: {self.minor.email}"
     

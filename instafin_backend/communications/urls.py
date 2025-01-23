@@ -1,5 +1,7 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
+from .webhooks.twilio import twilio_webhook
+from .api.urls import router as api_router
 
 app_name = 'communications'
 
@@ -17,4 +19,7 @@ urlpatterns = [
     path('tickets/', views.ticket_list, name='ticket_list'),
     path('tickets/create/', views.ticket_create, name='ticket_create'),
     path('tickets/<str:ticket_number>/', views.ticket_detail, name='ticket_detail'),
+
+    path('api/', include(api_router.urls)),
+    path('webhooks/twilio/', twilio_webhook, name='twilio-webhook'),
 ] 

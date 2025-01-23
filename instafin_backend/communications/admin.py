@@ -3,7 +3,8 @@ from django.utils.html import format_html
 from django.utils import timezone
 from .models import (
     ChatSession, ChatMessage, NotificationTemplate, Notification,
-    SupportTicket, TicketResponse, CommunicationAuditLog
+    SupportTicket, TicketResponse, CommunicationAuditLog, ChatDocumentSubmission, ChatEscalation,
+    AgentAvailability, AgentPerformance
 )
 
 class UnfoldAdminMixin:
@@ -124,3 +125,31 @@ class CommunicationAuditLogAdmin(UnfoldAdminMixin, admin.ModelAdmin):
     
     def has_change_permission(self, request, obj=None):
         return False
+
+@admin.register(ChatDocumentSubmission)
+class ChatDocumentSubmissionAdmin(UnfoldAdminMixin, admin.ModelAdmin):
+    list_display = ('chat_session', 'document_type', 'verification_status', 'submitted_at', 'verified_by')
+    list_filter = ('verification_status', 'document_type', 'submitted_at')
+    search_fields = ('chat_session__user__email', 'notes')
+    readonly_fields = ('submitted_at', 'verified_at')
+
+@admin.register(ChatEscalation)
+class ChatEscalationAdmin(UnfoldAdminMixin, admin.ModelAdmin):
+    list_display = ('chat_session', 'reason', 'priority', 'escalated_at', 'assigned_agent', 'resolved_at')
+    list_filter = ('reason', 'priority', 'auto_escalated')
+    search_fields = ('chat_session__user__email', 'resolution_notes')
+    readonly_fields = ('escalated_at', 'sentiment_score')
+
+@admin.register(AgentAvailability)
+class AgentAvailabilityAdmin(UnfoldAdminMixin, admin.ModelAdmin):
+    list_display = ('agent', 'status', 'current_chats', 'max_concurrent_chats', 'auto_assign_enabled')
+    list_filter = ('status', 'auto_assign_enabled')
+    search_fields = ('agent__email', 'agent__first_name', 'agent__last_name')
+    readonly_fields = ('last_status_change',)
+
+@admin.register(AgentPerformance)
+class AgentPerformanceAdmin(UnfoldAdminMixin, admin.ModelAdmin):
+    list_display = ('agent', 'date', 'chats_handled', 'avg_response_time', 'satisfaction_score')
+    list_filter = ('date',)
+    search_fields = ('agent__email',)
+    date_hierarchy = 'date'
