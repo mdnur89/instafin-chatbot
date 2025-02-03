@@ -4,6 +4,7 @@ from django.utils import timezone
 from django.contrib.auth import get_user_model
 from chatbot.models import Conversation
 import logging
+from intelligence.services import FAQMatchingService
 
 User = get_user_model()
 logger = logging.getLogger(__name__)
@@ -123,6 +124,13 @@ class ChatService:
     async def _get_chatbot_response(conversation, message):
         """Get response from chatbot"""
         try:
+            # First check if there's a matching FAQ
+            faq_match = await FAQMatchingService.find_matching_faq(message)
+            
+            if faq_match and faq_match['confidence'] > 0.7:
+                return faq_match['answer']
+            
+            # If no FAQ match, fall back to default response
             # TODO: Implement actual chatbot logic here
             return "Thank you for your message. How can I help you today?"
         except Exception as e:
