@@ -1,108 +1,176 @@
 from django.conf import settings
+from django.utils import timezone
 from .models import Intent, Conversation, ConversationTurn, EntityType
 from communications.services import AgentManagementService
+from .context import ConversationContextManager
+import spacy
+import numpy as np
+from sklearn.metrics.pairwise import cosine_similarity
+from .templates import ResponseTemplateManager
 
 class ChatbotService:
+    """Service for processing chatbot interactions"""
+    
     def __init__(self):
-        self.nlu_processor = self._initialize_nlu()
         self.context_manager = ConversationContextManager()
-
+        self.nlp = self._initialize_nlu()
+        self.min_confidence = 0.7
+        self.template_manager = ResponseTemplateManager()
+        
     def _initialize_nlu(self):
-        """Initialize NLU processor (placeholder for actual NLU implementation)"""
-        # This would be replaced with actual NLU service
-        # Could be spaCy, NLTK, or external service like Dialogflow
-        return None
-
-    async def process_message(self, chat_session, message_text):
+        """Initialize NLP model"""
+        try:
+            return spacy.load("en_core_web_md")
+        except OSError:
+            # If model not found, download it
+            spacy.cli.download("en_core_web_md")
+            return spacy.load("en_core_web_md")
+    
+    async def process_message(self, chat_session, message):
         """Process incoming message and generate response"""
-        # Get or create conversation
+        # Create or get conversation
         conversation = await self._get_or_create_conversation(chat_session)
-
-        # Detect intent
-        intent_result = await self._detect_intent(message_text, conversation.context)
         
-        # Update conversation with new intent
-        conversation.current_intent = intent_result['intent']
-        conversation.confidence_score = intent_result['confidence']
+        # Process message with NLU
+        intent, confidence, entities = await self._process_nlu(message)
         
-        # Check if human handoff is needed
-        if self._needs_human_handoff(conversation, intent_result):
-            return await self._handle_human_handoff(conversation)
-
-        # Extract parameters
-        params = await self._extract_parameters(
-            message_text,
-            conversation.current_intent,
-            conversation.context
+        # Update context with entities
+        await self.context_manager.update_context(
+            conversation.id,
+            {'entities': entities}
         )
-
+        
+        # Check if confidence meets threshold
+        if confidence < self.min_confidence:
+            return await self._handle_low_confidence(conversation, message)
+        
         # Generate response
-        response = await self._generate_response(conversation, params)
-
-        # Save conversation turn
-        await self._save_conversation_turn(
-            conversation,
-            message_text,
-            response,
-            intent_result,
-            params
+        response = await self._generate_response(conversation, intent, entities)
+        
+        # Store conversation turn
+        await self._store_conversation_turn(
+            conversation, message, response, intent, confidence, entities
         )
-
+        
         return response
-
-    async def _detect_intent(self, message_text, context):
-        """Detect intent from message"""
-        # Placeholder for actual intent detection
-        # This would use NLU service to detect intent
-        return {
-            'intent': None,
-            'confidence': 0.0,
-            'entities': {}
-        }
-
-    async def _extract_parameters(self, message_text, intent, context):
-        """Extract parameters from message based on intent requirements"""
-        # Placeholder for parameter extraction
-        return {}
-
-    async def _generate_response(self, conversation, params):
-        """Generate appropriate response based on intent and parameters"""
-        intent = conversation.current_intent
+    
+    async def _process_nlu(self, message):
+        """Process message with NLU to extract intent and entities"""
+        # Get all intents
+        intents = await Intent.objects.all()
+        
+        # Process message with spaCy
+        doc = self.nlp(message.lower())
+        
+        # Calculate similarity with each intent's training phrases
+        max_similarity = 0
+        matched_intent = None
+        
+        for intent in intents:
+            for phrase in intent.training_phrases:
+                phrase_doc = self.nlp(phrase.lower())
+                similarity = doc.similarity(phrase_doc)
+                
+                if similarity > max_similarity:
+                    max_similarity = similarity
+                    matched_intent = intent
+        
+        # Extract entities
+        entities = {}
+        for ent in doc.ents:
+            entity_type = await EntityType.objects.filter(name=ent.label_).afirst()
+            if entity_type:
+                entities[entity_type.name] = ent.text
+        
+        return matched_intent, max_similarity, entities
+    
+    async def _generate_response(self, conversation, intent, entities):
+        """Generate response based on intent and entities"""
         if not intent:
-            return "I'm not sure how to help with that. Could you please rephrase?"
-
-        # Get response template
-        template = self._get_response_template(intent, params)
+            return "I'm not sure I understand. Could you please rephrase that?"
         
-        # Fill template with parameters
-        response = self._fill_template(template, params, conversation.context)
+        # Get context
+        context = await self.context_manager.get_context(conversation.id)
+        
+        # Check if we have all required parameters
+        missing_params = []
+        for param in intent.required_parameters:
+            if param not in entities and param not in context.get('entities', {}):
+                missing_params.append(param)
+        
+        if missing_params:
+            # Ask for missing parameter
+            return f"Could you please provide the {missing_params[0]}?"
+        
+        # Get response template
+        template = await self._get_response_template(intent)
+        
+        # Fill template with entities and context
+        all_entities = {**context.get('entities', {}), **entities}
+        response = await self._fill_template(template, all_entities)
         
         return response
-
-    def _needs_human_handoff(self, conversation, intent_result):
-        """Determine if conversation needs human handoff"""
-        conditions = [
-            conversation.confidence_score < settings.MIN_CONFIDENCE_THRESHOLD,
-            conversation.current_intent and conversation.current_intent.requires_human,
-            len(conversation.conversationturn_set.all()) > settings.MAX_TURNS_BEFORE_HANDOFF
-        ]
-        return any(conditions)
-
-    async def _handle_human_handoff(self, conversation):
-        """Handle handoff to human agent"""
-        conversation.needs_human = True
-        conversation.status = 'waiting_agent'
-        await conversation.asave()
-
-        # Find available agent
-        agent = await AgentManagementService.find_available_agent()
-        if agent:
-            # Assign agent to chat session
-            conversation.chat_session.agent = agent
-            await conversation.chat_session.asave()
-            return "I'm connecting you with a human agent who can better assist you."
+    
+    async def _handle_low_confidence(self, conversation, message):
+        """Handle cases where intent confidence is low"""
+        # Check if we should escalate to human agent
+        if await self._should_escalate(conversation):
+            agent = await AgentManagementService.find_available_agent()
+            if agent:
+                await AgentManagementService.track_chat_assignment(agent, 'add')
+                return "I'll connect you with a human agent who can better assist you."
         
-        return "All our agents are currently busy. Please wait a moment."
+        return "I'm not quite sure I understand. Could you rephrase that?"
+    
+    async def _should_escalate(self, conversation):
+        """Determine if conversation should be escalated to human agent"""
+        # Get conversation turns
+        turns = await ConversationTurn.objects.filter(
+            conversation=conversation
+        ).acount()
+        
+        # Escalate if:
+        # 1. Too many low confidence turns
+        # 2. User seems frustrated
+        # 3. Complex query detected
+        return turns >= 3
+    
+    async def _get_or_create_conversation(self, chat_session):
+        """Get existing conversation or create new one"""
+        conversation = await Conversation.objects.filter(
+            chat_session=chat_session,
+            status='active'
+        ).afirst()
+        
+        if not conversation:
+            conversation = await Conversation.objects.acreate(
+                chat_session=chat_session,
+                status='active',
+                started_at=timezone.now()
+            )
+        
+        return conversation
+    
+    async def _store_conversation_turn(self, conversation, user_message, 
+                                     bot_response, intent, confidence, entities):
+        """Store conversation turn in database"""
+        await ConversationTurn.objects.acreate(
+            conversation=conversation,
+            user_message=user_message,
+            bot_response=bot_response,
+            intent=intent,
+            confidence_score=confidence,
+            parameters=entities,
+            timestamp=timezone.now()
+        )
+    
+    async def _get_response_template(self, intent):
+        """Get appropriate response template for the intent"""
+        return await self.template_manager.get_template(intent)
+    
+    async def _fill_template(self, template, entities):
+        """Fill template with entity values"""
+        return await self.template_manager.fill_template(template, entities)
 
 class ConversationContextManager:
     """Manages conversation context and state"""

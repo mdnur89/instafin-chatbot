@@ -6,6 +6,7 @@ from twilio.twiml.messaging_response import MessagingResponse
 from django.conf import settings
 from ..models import PlatformMessage, PlatformIntegration
 from ..services.chat_service import ChatService
+from ..services import TwilioService
 
 class TwilioWebhookHandler:
     def __init__(self):
@@ -33,8 +34,9 @@ class TwilioWebhookHandler:
         message_sid = request_data.get('MessageSid', '')
 
         # Get or create chat session
+        platform = await TwilioService.get_platform()
         chat_session = await ChatService.get_or_create_session(
-            platform='whatsapp',
+            platform=platform,
             external_id=whatsapp_number
         )
 
@@ -64,24 +66,35 @@ class TwilioWebhookHandler:
 @require_POST
 async def twilio_webhook(request):
     """Handle incoming WhatsApp messages via Twilio"""
-    handler = TwilioWebhookHandler()
-    
-    # Validate request is from Twilio
-    if not handler.validate_request(request):
-        return HttpResponse(status=403)
-    
     try:
-        # Process the message
-        response = await handler.process_message(request.POST)
+        # Extract message details from Twilio request
+        whatsapp_number = request.POST.get('From', '').replace('whatsapp:', '')
+        message_content = request.POST.get('Body', '')
         
-        # Create TwiML response
+        # Ensure WhatsApp platform integration exists
+        platform = await TwilioService.get_platform()
+        
+        # Get or create chat session
+        session = await ChatService.get_or_create_session(
+            platform='whatsapp',  # Use string identifier instead of platform object
+            external_id=whatsapp_number
+        )
+        
+        # Process message through chatbot
+        response = await ChatService.process_message(
+            session=session,
+            message_content=message_content
+        )
+        
+        # Create Twilio response
         twiml = MessagingResponse()
-        if response:
-            twiml.message(response)
+        twiml.message(response)
         
         return HttpResponse(str(twiml), content_type='text/xml')
         
     except Exception as e:
-        # Log the error and return empty 200 response to acknowledge receipt
-        logger.error(f"Error processing Twilio webhook: {str(e)}")
-        return HttpResponse(status=200) 
+        # Log error and return generic message
+        print(f"Error processing webhook: {str(e)}")
+        twiml = MessagingResponse()
+        twiml.message("Sorry, we're having trouble processing your message. Please try again later.")
+        return HttpResponse(str(twiml), content_type='text/xml') 

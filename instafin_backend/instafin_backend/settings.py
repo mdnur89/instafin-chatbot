@@ -11,13 +11,13 @@ SECRET_KEY = "django-insecure-!nw4r8&%fmvovcs=ut5e*l9rncwstxb6!%9^kb+#h6qzhzuk*f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.ngrok-free.app']
 
 
 # Twilio Settings
 TWILIO_ACCOUNT_SID = env('TWILIO_ACCOUNT_SID')
 TWILIO_AUTH_TOKEN = env('TWILIO_AUTH_TOKEN')
-TWILIO_WHATSAPP_NUMBER = env('TWILIO_WHATSAPP_NUMBER')  # Format: whatsapp:+1234567890
+TWILIO_WHATSAPP_NUMBER = env('TWILIO_WHATSAPP_NUMBER')  
 
 
 # Application definition

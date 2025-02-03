@@ -1,8 +1,13 @@
+from datetime import timezone
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from ..models import PlatformIntegration
 import requests
 import json
+import logging
+import httpx
+
+logger = logging.getLogger(__name__)
 
 class PlatformIntegrationService:
     """Service for managing platform integrations"""
@@ -13,9 +18,10 @@ class PlatformIntegrationService:
         try:
             if platform.platform == 'whatsapp':
                 return await PlatformIntegrationService._verify_twilio_credentials(platform)
-            # Add other platform verifications here
+            logger.warning(f"Unsupported platform: {platform.platform}")
             return False
         except Exception as e:
+            logger.error(f"Credential verification failed: {str(e)}")
             platform.last_health_check = timezone.now()
             await platform.asave()
             raise ValidationError(f"Failed to verify credentials: {str(e)}")
