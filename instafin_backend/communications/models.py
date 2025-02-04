@@ -2,6 +2,8 @@ from django.db import models
 from django.conf import settings
 from django.utils.translation import gettext_lazy as _
 from django.core.validators import MinValueValidator, MaxValueValidator
+from django.contrib.auth.models import User
+from django.apps import apps
 
 class ChatSession(models.Model):
     CHANNEL_TYPES = [
@@ -18,7 +20,7 @@ class ChatSession(models.Model):
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='chat_sessions')
     agent = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, related_name='handled_chats')
-    channel_type = models.CharField(max_length=20, choices=CHANNEL_TYPES)
+    channel_type = models.CharField(max_length=20, choices=CHANNEL_TYPES, default='general')
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='active')
     started_at = models.DateTimeField(auto_now_add=True)
     ended_at = models.DateTimeField(null=True, blank=True)
@@ -319,3 +321,29 @@ class PlatformMessage(models.Model):
     content = models.TextField()
     metadata = models.JSONField(default=dict)
     timestamp = models.DateTimeField(auto_now_add=True)
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        
+        User = apps.get_model(settings.AUTH_USER_MODEL)
+        
+        if self.direction == 'in':
+            sender = self.chat_session.user
+        else:
+            sender = self.chat_session.agent or User.objects.get_or_create(
+                email='system@instafin.com',
+                defaults={
+                    'is_staff': True, 
+                    'is_active': True,
+                    'first_name': 'System',
+                    'last_name': 'Bot'
+                }
+            )[0]
+        
+        ChatMessage.objects.get_or_create(
+            session=self.chat_session,
+            sender=sender,
+            content=f"[{self.platform.get_platform_display()}] {self.content}",
+            timestamp=self.timestamp,
+            defaults={'is_read': False}
+        )

@@ -7,8 +7,9 @@ app_name = 'communications'
 
 urlpatterns = [
     # Chat URLs
-    path('chats/', views.chat_session_list, name='chat_session_list'),
-    path('chats/<int:session_id>/', views.chat_session_detail, name='chat_session_detail'),
+    path('chat-sessions/', views.ChatSessionListView.as_view(), name='chat_session_list'),
+    path('chat-sessions/<int:session_id>/', views.chat_session_detail, name='chat_session_detail'),
+    path('chat-sessions/new/', views.start_new_chat, name='start_new_chat'),
     
     # Notification URLs
     path('notifications/templates/', views.notification_template_list, name='notification_template_list'),

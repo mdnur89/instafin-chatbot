@@ -4,7 +4,7 @@ from django.utils import timezone
 from .models import (
     ChatSession, ChatMessage, NotificationTemplate, Notification,
     SupportTicket, TicketResponse, CommunicationAuditLog, ChatDocumentSubmission, ChatEscalation,
-    AgentAvailability, AgentPerformance
+    AgentAvailability, AgentPerformance, PlatformIntegration, PlatformMessage
 )
 
 class UnfoldAdminMixin:
@@ -95,23 +95,26 @@ class NotificationAdmin(UnfoldAdminMixin, admin.ModelAdmin):
     def get_queryset(self, request):
         return super().get_queryset(request).select_related('recipient', 'template')
 
+class ChatMessageInline(admin.TabularInline):
+    model = ChatMessage
+    extra = 1
+    fields = ('sender', 'content', 'timestamp', 'is_read', 'attachment')
+    readonly_fields = ('timestamp',)
+    ordering = ('timestamp',)
+
 @admin.register(ChatSession)
 class ChatSessionAdmin(UnfoldAdminMixin, admin.ModelAdmin):
     list_display = ('id', 'user', 'agent', 'channel_type', 'status', 'started_at', 'duration')
     list_filter = ('channel_type', 'status', 'started_at')
     search_fields = ('user__email', 'agent__email')
     readonly_fields = ('started_at',)
+    inlines = [ChatMessageInline]
     
     def duration(self, obj):
         if obj.ended_at:
             duration = obj.ended_at - obj.started_at
             return f"{duration.seconds // 60} minutes"
         return "Ongoing"
-
-class ChatMessageInline(admin.TabularInline):
-    model = ChatMessage
-    extra = 0
-    readonly_fields = ('timestamp',)
 
 @admin.register(CommunicationAuditLog)
 class CommunicationAuditLogAdmin(UnfoldAdminMixin, admin.ModelAdmin):
@@ -153,3 +156,17 @@ class AgentPerformanceAdmin(UnfoldAdminMixin, admin.ModelAdmin):
     list_filter = ('date',)
     search_fields = ('agent__email',)
     date_hierarchy = 'date'
+
+@admin.register(PlatformIntegration)
+class PlatformIntegrationAdmin(UnfoldAdminMixin, admin.ModelAdmin):
+    list_display = ('platform', 'is_active', 'last_health_check')
+    list_filter = ('platform', 'is_active')
+    search_fields = ('platform', 'webhook_url')
+    readonly_fields = ('last_health_check',)
+
+@admin.register(PlatformMessage)
+class PlatformMessageAdmin(UnfoldAdminMixin, admin.ModelAdmin):
+    list_display = ('chat_session', 'platform', 'direction', 'content', 'timestamp')
+    list_filter = ('platform', 'direction', 'timestamp')
+    search_fields = ('content', 'external_id')
+    readonly_fields = ('timestamp',)

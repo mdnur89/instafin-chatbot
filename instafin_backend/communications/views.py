@@ -4,16 +4,17 @@ from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib import messages
 from django.http import JsonResponse
 from django.utils import timezone
-from django.db.models import Q
+from django.db.models import Q, Prefetch, OuterRef, Subquery
 from django.core.paginator import Paginator
 from .models import (
     ChatSession, ChatMessage, NotificationTemplate, 
-    Notification, SupportTicket, TicketResponse
+    Notification, SupportTicket, TicketResponse, PlatformMessage, PlatformIntegration
 )
 from .forms import (
     ChatMessageForm, NotificationTemplateForm, NotificationForm,
     SupportTicketForm, TicketResponseForm, BulkNotificationForm
 )
+from django.views.generic import ListView
 
 # Create your views here.
 
@@ -59,6 +60,29 @@ def chat_session_detail(request, session_id):
         'messages': messages,
         'form': form
     })
+
+@login_required
+def start_new_chat(request):
+    # Get or create web platform
+    platform = PlatformIntegration.objects.get(platform='web')
+    
+    # Create chat session
+    session = ChatSession.objects.create(
+        user=request.user,
+        channel_type='general',
+        status='active'
+    )
+    
+    # Create platform message
+    PlatformMessage.objects.create(
+        platform=platform,
+        chat_session=session,
+        direction='in',
+        content='Chat session started',
+        external_id=f'web_{session.id}'
+    )
+    
+    return redirect('communications:chat_session_detail', session_id=session.id)
 
 # Notification Views
 @staff_member_required
@@ -172,3 +196,29 @@ def get_user_choices():
     from django.contrib.auth import get_user_model
     User = get_user_model()
     return User.objects.filter(is_active=True).values_list('id', 'email')
+
+class ChatSessionListView(ListView):
+    model = ChatSession
+    template_name = 'communications/chat_session_list.html'
+    context_object_name = 'sessions'
+    paginate_by = 20
+
+    def get_queryset(self):
+        # Get the last message for each chat session
+        last_message = ChatMessage.objects.filter(
+            session=OuterRef('pk')
+        ).order_by('-timestamp')
+
+        # Get the platform message for each chat session
+        platform_message = PlatformMessage.objects.filter(
+            chat_session=OuterRef('pk')
+        ).select_related('platform').first()
+
+        return ChatSession.objects.select_related('user').annotate(
+            last_message=Subquery(
+                last_message.values('content')[:1]
+            ),
+            platform_message=Subquery(
+                platform_message.values('platform__platform')[:1]
+            )
+        ).order_by('-started_at')
