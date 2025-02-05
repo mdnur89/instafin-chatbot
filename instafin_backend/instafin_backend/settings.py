@@ -20,7 +20,11 @@ TWILIO_AUTH_TOKEN = env('TWILIO_AUTH_TOKEN')
 TWILIO_WHATSAPP_NUMBER = env('TWILIO_WHATSAPP_NUMBER')  
 
 
-# Application definition
+# Instafin API Settings
+INSTAFIN_API_BASE_URL = env('INSTAFIN_API_BASE_URL') 
+INSTAFIN_API_USERNAME = env('INSTAFIN_API_USERNAME')  
+INSTAFIN_API_PASSWORD = env('INSTAFIN_API_PASSWORD')  
+
 
 INSTALLED_APPS = [
     "unfold",
@@ -159,6 +163,31 @@ CHANNEL_LAYERS = {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
             "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
+
+# Logging Configuration
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        'communications': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': True,
         },
     },
 }

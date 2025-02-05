@@ -118,16 +118,19 @@ class ChatSessionAdmin(UnfoldAdminMixin, admin.ModelAdmin):
 
 @admin.register(CommunicationAuditLog)
 class CommunicationAuditLogAdmin(UnfoldAdminMixin, admin.ModelAdmin):
-    list_display = ('timestamp', 'user', 'action', 'entity_type', 'entity_id')
+    list_display = ('timestamp', 'user', 'action', 'entity_type', 'get_description', 'ip_address')
     list_filter = ('action', 'entity_type', 'timestamp')
-    search_fields = ('user__email', 'description')
+    search_fields = ('user__email', 'description', 'entity_id')
     readonly_fields = ('timestamp', 'ip_address')
-
-    def has_add_permission(self, request):
-        return False
+    date_hierarchy = 'timestamp'
     
-    def has_change_permission(self, request, obj=None):
-        return False
+    def get_description(self, obj):
+        # Truncate long descriptions for display
+        return (obj.description[:100] + '...') if len(obj.description) > 100 else obj.description
+    get_description.short_description = 'Description'
+    
+    class Meta:
+        ordering = ['-timestamp']
 
 @admin.register(ChatDocumentSubmission)
 class ChatDocumentSubmissionAdmin(UnfoldAdminMixin, admin.ModelAdmin):

@@ -25,7 +25,45 @@ class ChatSession(models.Model):
     started_at = models.DateTimeField(auto_now_add=True)
     ended_at = models.DateTimeField(null=True, blank=True)
     satisfaction_score = models.IntegerField(null=True, blank=True)
+    metadata = models.JSONField(default=dict, blank=True)
     
+    def save(self, *args, **kwargs):
+        is_new = self.pk is None
+        old_status = None if is_new else ChatSession.objects.get(pk=self.pk).status
+        old_agent = None if is_new else ChatSession.objects.get(pk=self.pk).agent
+        
+        super().save(*args, **kwargs)
+        
+        # Log creation
+        if is_new:
+            CommunicationAuditLog.objects.create(
+                user=self.user,
+                action='create',
+                entity_type='chat_session',
+                entity_id=self.pk,
+                description=f"Chat session created - Type: {self.get_channel_type_display()}"
+            )
+        
+        # Log status changes
+        if not is_new and old_status != self.status:
+            CommunicationAuditLog.objects.create(
+                user=self.user,
+                action='status_change',
+                entity_type='chat_session',
+                entity_id=self.pk,
+                description=f"Status changed from {old_status} to {self.status}"
+            )
+        
+        # Log agent assignment changes
+        if not is_new and old_agent != self.agent:
+            CommunicationAuditLog.objects.create(
+                user=self.agent or self.user,
+                action='assignment',
+                entity_type='chat_session',
+                entity_id=self.pk,
+                description=f"Agent changed from {old_agent or 'None'} to {self.agent or 'None'}"
+            )
+
     class Meta:
         ordering = ['-started_at']
 
@@ -340,10 +378,21 @@ class PlatformMessage(models.Model):
                 }
             )[0]
         
+        # Create ChatMessage
         ChatMessage.objects.get_or_create(
             session=self.chat_session,
             sender=sender,
             content=f"[{self.platform.get_platform_display()}] {self.content}",
             timestamp=self.timestamp,
             defaults={'is_read': False}
+        )
+
+        # Create audit log entry
+        CommunicationAuditLog.objects.create(
+            user=sender,
+            action='create',
+            entity_type='chat',
+            entity_id=self.chat_session.id,
+            description=f"{self.direction.upper()} message via {self.platform.get_platform_display()}: {self.content[:100]}{'...' if len(self.content) > 100 else ''}",
+            timestamp=self.timestamp
         )
