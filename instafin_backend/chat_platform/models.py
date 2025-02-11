@@ -91,3 +91,23 @@ class PlatformHealth(models.Model):
         indexes = [
             models.Index(fields=['platform', 'check_timestamp']),
         ]
+
+class PlatformMessage(models.Model):
+    """Model for storing platform message details"""
+    platform = models.ForeignKey(ChatPlatform, on_delete=models.CASCADE)
+    external_id = models.CharField(max_length=255)  # Message ID from platform
+    chat_session = models.ForeignKey(
+        'communications.ChatSession',
+        on_delete=models.CASCADE,
+        related_name='platform_messages'
+    )
+    direction = models.CharField(max_length=10, choices=[('in', 'Incoming'), ('out', 'Outgoing')])
+    content = models.JSONField()
+    metadata = models.JSONField(default=dict)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['external_id']),
+            models.Index(fields=['chat_session', 'created_at']),
+        ]

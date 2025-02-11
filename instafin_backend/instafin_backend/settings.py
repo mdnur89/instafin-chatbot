@@ -1,14 +1,14 @@
 from pathlib import Path
 from decouple import config as env
+import os
 
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 SECRET_KEY = "django-insecure-!nw4r8&%fmvovcs=ut5e*l9rncwstxb6!%9^kb+#h6qzhzuk*f"
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# SECURITY WARNING
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.ngrok-free.app']
@@ -60,7 +60,9 @@ ROOT_URLCONF = "instafin_backend.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [
+            BASE_DIR / 'templates',
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -156,15 +158,12 @@ UNFOLD = {
     },
 }
 
+# Channels Configuration
 ASGI_APPLICATION = 'instafin_backend.asgi.application'
-
 CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        'CONFIG': {
-            "hosts": [('127.0.0.1', 6379)],
-        },
-    },
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    }
 }
 
 # Logging Configuration
@@ -182,12 +181,21 @@ LOGGING = {
             'class': 'logging.StreamHandler',
             'formatter': 'verbose',
         },
+        'file': {
+            'class': 'logging.FileHandler',
+            'filename': 'debug.log',
+            'formatter': 'verbose',
+        },
     },
     'loggers': {
-        'communications': {
-            'handlers': ['console'],
+        '': {  # Root logger
+            'handlers': ['console', 'file'],
             'level': 'DEBUG',
-            'propagate': True,
+        },
+        'chatbot': {
+            'handlers': ['console', 'file'],
+            'level': 'DEBUG',
+            'propagate': False,
         },
     },
 }

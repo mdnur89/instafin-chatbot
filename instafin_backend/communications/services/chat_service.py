@@ -34,49 +34,49 @@ class ChatService:
     async def get_or_create_session(platform, external_id):
         """Get existing chat session or create new one"""
         try:
-            # Clean up the phone number
-            phone_number = external_id.replace('whatsapp:', '')
-            
-            # Get or create user - using afilter().afirst() for async
-            user = await User.objects.filter(phone_number=phone_number).afirst()
-            if not user:
-                user = await User.objects.acreate(
-                    phone_number=phone_number,
-                    is_active=True,
-                    is_verified=False,
-                )
+            # For web platform, create a temporary user
+            if platform == 'web':
+                user = await User.objects.filter(username=external_id).afirst()
+                if not user:
+                    user = await User.objects.acreate(
+                        username=external_id,
+                        is_active=True,
+                        is_verified=False,
+                    )
+            else:
+                # Clean up the phone number for WhatsApp
+                phone_number = external_id.replace('whatsapp:', '')
+                user = await User.objects.filter(phone_number=phone_number).afirst()
+                if not user:
+                    user = await User.objects.acreate(
+                        phone_number=phone_number,
+                        is_active=True,
+                        is_verified=False,
+                    )
 
-            # Get or create chat session
+            # Get or create chat session using the correct field names
             session = await ChatSession.objects.filter(
-                channel_type=platform,
+                platform=platform,
                 user=user,
                 status='active'
             ).afirst()
 
             if not session:
                 session = await ChatSession.objects.acreate(
-                    channel_type=platform,
+                    platform=platform,
                     user=user,
-                    status='active'
-                )
-
-            # Get or create conversation for the chatbot
-            conversation = await Conversation.objects.filter(
-                chat_session=session
-            ).afirst()
-
-            if not conversation:
-                conversation = await Conversation.objects.acreate(
-                    chat_session=session,
+                    channel_type='general',
                     status='active',
-                    context={}
+                    metadata={
+                        'web_session_id': external_id,
+                    }
                 )
+
+            return session
 
         except Exception as e:
             print(f"Error in get_or_create_session: {str(e)}")
             raise
-
-        return session
 
     @staticmethod
     async def store_message(session, content, direction='in', metadata=None):

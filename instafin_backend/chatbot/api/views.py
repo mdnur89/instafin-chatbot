@@ -1,5 +1,5 @@
 from rest_framework import viewsets, status
-from rest_framework.decorators import action
+from rest_framework.decorators import action, api_view
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from ..models import Intent, Conversation, ConversationTurn
@@ -9,6 +9,11 @@ from .serializers import (
     ConversationSerializer,
     ConversationTurnSerializer
 )
+from communications.models import ChatSession
+from django.http import HttpResponse
+from twilio.request_validator import RequestValidator
+from django.conf import settings
+from chat_platform.models import PlatformMessage, PlatformHealth
 
 class ChatbotViewSet(viewsets.ViewSet):
     """
@@ -83,4 +88,44 @@ class ConversationViewSet(viewsets.ModelViewSet):
 class ConversationTurnViewSet(viewsets.ModelViewSet):
     queryset = ConversationTurn.objects.all()
     serializer_class = ConversationTurnSerializer
-    permission_classes = [IsAuthenticated] 
+    permission_classes = [IsAuthenticated]
+
+@api_view(['POST'])
+def twilio_webhook(request):
+    """Handle incoming messages and status updates from Twilio"""
+    # Validate the request is from Twilio
+    validator = RequestValidator(settings.TWILIO_AUTH_TOKEN)
+    twilio_signature = request.headers.get('X-Twilio-Signature', '')
+    
+    if not validator.validate(
+        request.build_absolute_uri(),
+        request.data,
+        twilio_signature
+    ):
+        return HttpResponse(status=403)
+
+    message_status = request.data.get('MessageStatus')
+    message_sid = request.data.get('MessageSid')
+    
+    # Handle message status updates
+    if message_status:
+        platform_message = PlatformMessage.objects.filter(
+            external_id=message_sid
+        ).first()
+        
+        if platform_message:
+            platform_message.metadata['delivery_status'] = message_status
+            platform_message.save()
+            
+            # Update health metrics
+            PlatformHealth.objects.create(
+                platform=platform_message.platform,
+                status='UP' if message_status == 'delivered' else 'DEGRADED',
+                response_time=0,
+                success_rate=100.0 if message_status == 'delivered' else 0.0,
+                messages_sent=1,
+                messages_failed=0 if message_status == 'delivered' else 1,
+                additional_metrics={'twilio_status': message_status}
+            )
+    
+    return HttpResponse(status=200) 

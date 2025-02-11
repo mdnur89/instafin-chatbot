@@ -6,18 +6,29 @@ from django.contrib.auth.models import User
 from django.apps import apps
 
 class ChatSession(models.Model):
+    PLATFORM_CHOICES = [
+        ('whatsapp', 'WhatsApp'),
+        ('facebook', 'Facebook Messenger'),
+        ('web', 'Web Chat'),
+    ]
+    
     CHANNEL_TYPES = [
         ('support', 'Support Chat'),
         ('sales', 'Sales Chat'),
         ('general', 'General Inquiry'),
     ]
-    
+
     STATUS_CHOICES = [
         ('active', 'Active'),
         ('closed', 'Closed'),
         ('pending', 'Pending'),
     ]
 
+    platform = models.CharField(
+        max_length=20,
+        choices=PLATFORM_CHOICES,
+        default='whatsapp'
+    )
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='chat_sessions')
     agent = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, related_name='handled_chats')
     channel_type = models.CharField(max_length=20, choices=CHANNEL_TYPES, default='general')

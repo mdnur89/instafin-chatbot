@@ -1,0 +1,162 @@
+INFO 2025-02-11 09:53:08,251 autoreload /home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_backend/chatbot/consumers.py changed, reloading.
+INFO 2025-02-11 09:53:13,725 autoreload Watching for file changes with StatReloader
+INFO 2025-02-11 09:53:22,108 autoreload /home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_backend/chatbot/handlers/web_message_handler.py changed, reloading.
+INFO 2025-02-11 09:53:25,073 autoreload Watching for file changes with StatReloader
+WARNING 2025-02-11 09:53:32,438 log Not Found: /ws/chat/
+DEBUG 2025-02-11 09:53:53,614 selector_events Using selector: EpollSelector
+ERROR 2025-02-11 09:53:53,621 log Internal Server Error: /chat/message/
+DEBUG 2025-02-11 09:53:57,150 selector_events Using selector: EpollSelector
+ERROR 2025-02-11 09:53:57,154 log Internal Server Error: /chat/message/
+DEBUG 2025-02-11 10:44:55,715 selector_events Using selector: EpollSelector
+INFO 2025-02-11 10:45:05,753 autoreload /home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_backend/communications/services/chat_service.py changed, reloading.
+INFO 2025-02-11 10:45:11,022 autoreload Watching for file changes with StatReloader
+INFO 2025-02-11 10:52:23,731 autoreload /home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_backend/chatbot/handlers/web_message_handler.py changed, reloading.
+INFO 2025-02-11 10:52:26,877 autoreload Watching for file changes with StatReloader
+WARNING 2025-02-11 10:52:36,491 log Not Found: /ws/chat/
+WARNING 2025-02-11 10:52:36,648 log Not Found: /favicon.ico
+DEBUG 2025-02-11 10:52:41,588 selector_events Using selector: EpollSelector
+ERROR 2025-02-11 10:52:41,592 log Internal Server Error: /chat/message/
+DEBUG 2025-02-11 10:53:25,213 selector_events Using selector: EpollSelector
+INFO 2025-02-11 10:59:09,438 autoreload /home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_backend/communications/models.py changed, reloading.
+INFO 2025-02-11 10:59:18,291 autoreload Watching for file changes with StatReloader
+INFO 2025-02-11 10:59:42,668 autoreload /home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_backend/communications/services/chat_service.py changed, reloading.
+INFO 2025-02-11 10:59:48,351 autoreload Watching for file changes with StatReloader
+INFO 2025-02-11 11:00:00,145 autoreload /home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_backend/communications/services/chat_service.py changed, reloading.
+INFO 2025-02-11 11:00:03,254 autoreload Watching for file changes with StatReloader
+DEBUG 2025-02-11 11:00:20,710 selector_events Using selector: EpollSelector
+WARNING 2025-02-11 11:00:29,299 log Not Found: /ws/chat/
+DEBUG 2025-02-11 11:00:38,694 selector_events Using selector: EpollSelector
+ERROR 2025-02-11 11:00:38,703 log Internal Server Error: /chat/message/
+INFO 2025-02-11 11:06:06,619 autoreload /home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_backend/chatbot/views.py changed, reloading.
+INFO 2025-02-11 11:06:12,525 autoreload Watching for file changes with StatReloader
+INFO 2025-02-11 11:31:47,262 autoreload Watching for file changes with StatReloader
+WARNING 2025-02-11 11:35:00,481 log Not Found: /ws/chat/
+WARNING 2025-02-11 11:35:00,679 log Not Found: /favicon.ico
+DEBUG 2025-02-11 11:35:07,366 selector_events Using selector: EpollSelector
+ERROR 2025-02-11 11:35:07,369 web_handler Error processing web message
+Traceback (most recent call last):
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_backend/chatbot/handlers/web_handler.py", line 23, in handle_message
+    user = await User.objects.filter(username=username).afirst()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_env/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_env/lib/python3.12/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_env/lib/python3.12/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_env/lib/python3.12/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_env/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_env/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_env/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1491, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_env/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1303, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_env/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1768, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'username' into field. Choices are: age_verification, analyticsevent, assigned_escalations, assigned_tickets, availability, chat_sessions, chat_verified_documents, chatmessage, communicationauditlog, communications, created_at, credit_score, current_balance, date_joined, date_of_birth, dependents, document, documentrequest, email, engagement_metrics, feedback, first_name, groups, guardian_control, handled_chats, id, is_active, is_staff, is_superuser, is_verified, last_login, last_name, loan_audit_logs, loan_decisions, loanapplication, logentry, monitoring_audit_logs, national_id, notifications, password, performance_metrics, phone_number, preference_changes, preference_history, preferences, profile, received_communications, risk_level, sent_communications, support_tickets, ticketresponse, updated_at, user_permissions, verified_age_documents, verified_documents
+ERROR 2025-02-11 11:35:07,377 log Internal Server Error: /chat/message/
+DEBUG 2025-02-11 11:41:42,292 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 11:41:48,845 selector_events Using selector: EpollSelector
+ERROR 2025-02-11 11:41:48,847 web_handler Error processing web message
+Traceback (most recent call last):
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_backend/chatbot/handlers/web_handler.py", line 23, in handle_message
+    user = await User.objects.filter(username=username).afirst()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_env/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_env/lib/python3.12/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_env/lib/python3.12/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_env/lib/python3.12/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_env/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_env/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_env/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1491, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_env/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1303, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_env/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1768, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'username' into field. Choices are: age_verification, analyticsevent, assigned_escalations, assigned_tickets, availability, chat_sessions, chat_verified_documents, chatmessage, communicationauditlog, communications, created_at, credit_score, current_balance, date_joined, date_of_birth, dependents, document, documentrequest, email, engagement_metrics, feedback, first_name, groups, guardian_control, handled_chats, id, is_active, is_staff, is_superuser, is_verified, last_login, last_name, loan_audit_logs, loan_decisions, loanapplication, logentry, monitoring_audit_logs, national_id, notifications, password, performance_metrics, phone_number, preference_changes, preference_history, preferences, profile, received_communications, risk_level, sent_communications, support_tickets, ticketresponse, updated_at, user_permissions, verified_age_documents, verified_documents
+ERROR 2025-02-11 11:41:48,850 log Internal Server Error: /chat/message/
+DEBUG 2025-02-11 11:42:06,401 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 11:42:16,735 selector_events Using selector: EpollSelector
+ERROR 2025-02-11 11:42:16,756 web_handler Error processing web message
+Traceback (most recent call last):
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_backend/chatbot/handlers/web_handler.py", line 23, in handle_message
+    user = await User.objects.filter(username=username).afirst()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_env/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_env/lib/python3.12/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_env/lib/python3.12/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_env/lib/python3.12/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_env/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_env/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_env/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1491, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_env/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1303, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_env/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1768, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'username' into field. Choices are: age_verification, analyticsevent, assigned_escalations, assigned_tickets, availability, chat_sessions, chat_verified_documents, chatmessage, communicationauditlog, communications, created_at, credit_score, current_balance, date_joined, date_of_birth, dependents, document, documentrequest, email, engagement_metrics, feedback, first_name, groups, guardian_control, handled_chats, id, is_active, is_staff, is_superuser, is_verified, last_login, last_name, loan_audit_logs, loan_decisions, loanapplication, logentry, monitoring_audit_logs, national_id, notifications, password, performance_metrics, phone_number, preference_changes, preference_history, preferences, profile, received_communications, risk_level, sent_communications, support_tickets, ticketresponse, updated_at, user_permissions, verified_age_documents, verified_documents
+ERROR 2025-02-11 11:42:16,785 log Internal Server Error: /chat/message/
+INFO 2025-02-11 11:44:21,704 autoreload /home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_backend/chatbot/handlers/web_handler.py changed, reloading.
+INFO 2025-02-11 11:44:26,907 autoreload Watching for file changes with StatReloader
+WARNING 2025-02-11 11:44:34,449 log Not Found: /ws/chat/
+DEBUG 2025-02-11 11:44:40,439 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 11:44:45,657 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 11:45:18,524 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 11:45:28,683 selector_events Using selector: EpollSelector
+INFO 2025-02-11 11:55:53,743 autoreload /home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_backend/chatbot/handlers/web_message_handler.py changed, reloading.
+INFO 2025-02-11 11:55:56,642 autoreload Watching for file changes with StatReloader
+WARNING 2025-02-11 11:56:15,722 log Not Found: /ws/chat/
+DEBUG 2025-02-11 11:56:20,541 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 11:56:28,025 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 11:56:28,215 _trace connect_tcp.started host='wisrodtraining.instafin.info' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG 2025-02-11 11:56:28,315 _trace connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x791998150350>
+DEBUG 2025-02-11 11:56:28,315 _trace start_tls.started ssl_context=<ssl.SSLContext object at 0x791999a0ebd0> server_hostname='wisrodtraining.instafin.info' timeout=5.0
+DEBUG 2025-02-11 11:56:28,353 _trace start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x791998137e00>
+DEBUG 2025-02-11 11:56:28,355 _trace send_request_headers.started request=<Request [b'POST']>
+DEBUG 2025-02-11 11:56:28,356 _trace send_request_headers.complete
+DEBUG 2025-02-11 11:56:28,358 _trace send_request_body.started request=<Request [b'POST']>
+DEBUG 2025-02-11 11:56:28,360 _trace send_request_body.complete
+DEBUG 2025-02-11 11:56:28,360 _trace receive_response_headers.started request=<Request [b'POST']>
+DEBUG 2025-02-11 11:56:29,344 _trace receive_response_headers.complete return_value=(b'HTTP/1.1', 401, b'Unauthorized', [(b'Date', b'Tue, 11 Feb 2025 11:56:29 GMT'), (b'Content-Length', b'0'), (b'Connection', b'keep-alive'), (b'access-control-allow-credentials', b'true'), (b'access-control-allow-headers', b'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range,X-OTG-uuid,X-OTG-Version'), (b'access-control-allow-methods', b'GET, POST, PUT, HEAD, PATCH, OPTIONS'), (b'access-control-expose-headers', b'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range,X-OTG-uuid,X-OTG-Version'), (b'Cache-Control', b'no-cache, no-store, must-revalidate'), (b'expires', b'0'), (b'instafin-backend', b'11740475e6f3d2e87f9fd099d726282cb112a7c3'), (b'instafin-frontend', b'/assets/'), (b'pragma', b'no-cache'), (b'trace-id', b'c2a5ab379671056449632ca45f05ceed'), (b'vary', b'Accept-Encoding'), (b'www-authenticate', b'Basic realm="Unauthorized"'), (b'x-content-type-options', b'nosniff'), (b'x-correlation-id', b'c2a5ab379671056449632ca45f05ceed'), (b'x-envoy-upstream-service-time', b'47'), (b'x-frame-options', b'SAMEORIGIN'), (b'x-tracetook', b'46'), (b'x-xss-protection', b'1; mode=block'), (b'cf-cache-status', b'DYNAMIC'), (b'Report-To', b'{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=mIw3WStO0Sn%2F6t4uZKw8shVod1z2TNiubKZ2nR4li0k%2BhcjK4E7RaWNKRlhpLeZ7XTAlE3oGnH92rRbVxfH2tiD0MkbdCAgxi%2FHotqinvq4aTttIi32O98Wcc6b%2Fuze3lLE5TYhlvSStjzsaXOf%2BpJgVYIZ%2FLbp4uN6F"}],"group":"cf-nel","max_age":604800}'), (b'NEL', b'{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'), (b'Server', b'cloudflare'), (b'CF-RAY', b'910427e54a4f95ff-JNB'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'server-timing', b'cfL4;desc="?proto=TCP&rtt=22673&min_rtt=19131&rtt_var=7726&sent=6&recv=10&lost=0&retrans=0&sent_bytes=2845&recv_bytes=1019&delivery_rate=190334&cwnd=252&unsent_bytes=0&cid=caec05e29106a994&ts=1001&x=0"')])
+INFO 2025-02-11 11:56:29,345 _client HTTP Request: POST https://wisrodtraining.instafin.info/submit/account.LookupDebts "HTTP/1.1 401 Unauthorized"
+DEBUG 2025-02-11 11:56:29,346 _trace receive_response_body.started request=<Request [b'POST']>
+DEBUG 2025-02-11 11:56:29,346 _trace receive_response_body.complete
+DEBUG 2025-02-11 11:56:29,347 _trace response_closed.started
+DEBUG 2025-02-11 11:56:29,347 _trace response_closed.complete
+DEBUG 2025-02-11 11:56:29,348 _trace close.started
+DEBUG 2025-02-11 11:56:29,349 _trace close.complete
+DEBUG 2025-02-11 11:56:41,537 selector_events Using selector: EpollSelector
