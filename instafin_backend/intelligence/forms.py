@@ -1,5 +1,5 @@
 from django import forms
-from .models import Category, NLUModel, FAQ, TrainingSession
+from .models import Category, NLUModel, FAQ, TrainingSession, KnowledgeBase
 
 class CategoryForm(forms.ModelForm):
     class Meta:
@@ -53,3 +53,20 @@ class TrainingSessionForm(forms.ModelForm):
         widgets = {
             'status': forms.Select(choices=TrainingSession.status.field.choices)
         }
+
+class KnowledgeBaseForm(forms.ModelForm):
+    class Meta:
+        model = KnowledgeBase
+        fields = ['title', 'content', 'category', 'keywords', 'metadata',
+                 'is_training_data', 'priority', 'is_active']
+        widgets = {
+            'content': forms.Textarea(attrs={'rows': 5}),
+            'keywords': forms.Textarea(attrs={'rows': 2, 'class': 'json-editor'}),
+            'metadata': forms.Textarea(attrs={'rows': 3, 'class': 'json-editor'}),
+        }
+
+    def clean_keywords(self):
+        keywords = self.cleaned_data['keywords']
+        if not isinstance(keywords, list):
+            raise forms.ValidationError("Keywords must be a list of strings")
+        return keywords

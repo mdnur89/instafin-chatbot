@@ -1,6 +1,6 @@
 from django.contrib import admin
 from unfold.admin import ModelAdmin
-from .models import Category, NLUModel, FAQ, TrainingSession
+from .models import Category, NLUModel, FAQ, TrainingSession, KnowledgeBase
 
 @admin.register(Category)
 class CategoryAdmin(ModelAdmin):
@@ -35,4 +35,12 @@ class TrainingSessionAdmin(ModelAdmin):
     list_display = ('model', 'start_time', 'end_time', 'status')
     list_filter = ('status', 'model')
     readonly_fields = ('start_time', 'end_time', 'metrics', 'error_log')
+    compressed_fields = []
+
+@admin.register(KnowledgeBase)
+class KnowledgeBaseAdmin(ModelAdmin):
+    list_display = ('title', 'category', 'priority', 'is_training_data', 'is_active')
+    list_filter = ('category', 'is_training_data', 'is_active')
+    search_fields = ('title', 'content', 'keywords')
+    readonly_fields = ('embeddings',)
     compressed_fields = []

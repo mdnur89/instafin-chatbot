@@ -2,6 +2,7 @@ from django.conf import settings
 from django.utils import timezone
 from .models import Intent, Conversation, ConversationTurn, EntityType
 from communications.services import AgentManagementService
+from intelligence.services.knowledge_service import KnowledgeService
 from .context import ConversationContextManager
 import spacy
 import numpy as np
@@ -16,6 +17,7 @@ class ChatbotService:
         self.nlp = self._initialize_nlu()
         self.min_confidence = 0.7
         self.template_manager = ResponseTemplateManager()
+        self.knowledge_service = KnowledgeService()
         
     def _initialize_nlu(self):
         """Initialize NLP model"""
@@ -28,11 +30,18 @@ class ChatbotService:
     
     async def process_message(self, chat_session, message):
         """Process incoming message and generate response"""
-        # Create or get conversation
         conversation = await self._get_or_create_conversation(chat_session)
         
-        # Process message with NLU
+        # First try to match with intents
         intent, confidence, entities = await self._process_nlu(message)
+        
+        # If confidence is low, try knowledge base
+        if confidence < self.min_confidence:
+            knowledge_results = await self.knowledge_service.find_relevant_knowledge(message)
+            if knowledge_results:
+                best_match = knowledge_results[0]
+                if best_match['similarity'] > self.min_confidence:
+                    return await self._format_knowledge_response(best_match['entry'])
         
         # Update context with entities
         await self.context_manager.update_context(
@@ -40,19 +49,10 @@ class ChatbotService:
             {'entities': entities}
         )
         
-        # Check if confidence meets threshold
         if confidence < self.min_confidence:
             return await self._handle_low_confidence(conversation, message)
-        
-        # Generate response
-        response = await self._generate_response(conversation, intent, entities)
-        
-        # Store conversation turn
-        await self._store_conversation_turn(
-            conversation, message, response, intent, confidence, entities
-        )
-        
-        return response
+            
+        return await self._generate_response(conversation, intent, entities)
     
     async def _process_nlu(self, message):
         """Process message with NLU to extract intent and entities"""
@@ -171,6 +171,11 @@ class ChatbotService:
     async def _fill_template(self, template, entities):
         """Fill template with entity values"""
         return await self.template_manager.fill_template(template, entities)
+
+    async def _format_knowledge_response(self, knowledge_entry):
+        """Format knowledge base entry into a response"""
+        # You might want to customize this based on your needs
+        return f"{knowledge_entry.content}\n\nThis information is from our knowledge base about: {knowledge_entry.title}"
 
 class ConversationContextManager:
     """Manages conversation context and state"""

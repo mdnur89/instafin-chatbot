@@ -160,3 +160,133 @@ DEBUG 2025-02-11 11:56:29,347 _trace response_closed.complete
 DEBUG 2025-02-11 11:56:29,348 _trace close.started
 DEBUG 2025-02-11 11:56:29,349 _trace close.complete
 DEBUG 2025-02-11 11:56:41,537 selector_events Using selector: EpollSelector
+WARNING 2025-02-11 12:19:38,356 log Not Found: /favicon.ico
+INFO 2025-02-11 12:31:50,948 autoreload /home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_backend/intelligence/models.py changed, reloading.
+INFO 2025-02-11 12:31:54,992 autoreload Watching for file changes with StatReloader
+INFO 2025-02-11 12:34:33,876 autoreload /home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_backend/intelligence/admin.py changed, reloading.
+INFO 2025-02-11 12:34:36,604 autoreload Watching for file changes with StatReloader
+INFO 2025-02-11 12:34:43,760 autoreload /home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_backend/intelligence/forms.py changed, reloading.
+INFO 2025-02-11 12:34:47,413 autoreload Watching for file changes with StatReloader
+INFO 2025-02-11 12:46:37,749 autoreload /home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_backend/intelligence/views.py changed, reloading.
+INFO 2025-02-11 12:46:39,704 autoreload Watching for file changes with StatReloader
+INFO 2025-02-11 13:04:21,892 autoreload Watching for file changes with StatReloader
+INFO 2025-02-11 13:11:30,696 autoreload Watching for file changes with StatReloader
+DEBUG 2025-02-11 13:11:36,598 selector_events Using selector: EpollSelector
+WARNING 2025-02-11 13:11:51,293 log Not Found: /ws/chat/
+WARNING 2025-02-11 13:11:51,497 log Not Found: /favicon.ico
+DEBUG 2025-02-11 13:11:57,427 selector_events Using selector: EpollSelector
+WARNING 2025-02-11 13:13:28,417 log Not Found: /favicon.ico
+DEBUG 2025-02-11 13:41:43,221 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 13:50:25,197 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 13:52:04,827 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 13:54:37,136 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 13:59:27,007 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:01:53,092 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:05:06,061 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:08:58,407 selector_events Using selector: EpollSelector
+INFO 2025-02-11 14:09:41,343 autoreload Watching for file changes with StatReloader
+WARNING 2025-02-11 14:10:12,354 log Not Found: /ws/chat/
+DEBUG 2025-02-11 14:10:35,257 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:10:35,353 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:10:51,860 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:10:56,271 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:10:56,894 _trace connect_tcp.started host='wisrodtraining.instafin.info' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG 2025-02-11 14:10:57,178 _trace connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7705f4109790>
+DEBUG 2025-02-11 14:10:57,179 _trace start_tls.started ssl_context=<ssl.SSLContext object at 0x7705f4115dd0> server_hostname='wisrodtraining.instafin.info' timeout=5.0
+DEBUG 2025-02-11 14:10:57,266 _trace start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7705f4b84f50>
+DEBUG 2025-02-11 14:10:57,268 _trace send_request_headers.started request=<Request [b'POST']>
+DEBUG 2025-02-11 14:10:57,269 _trace send_request_headers.complete
+DEBUG 2025-02-11 14:10:57,271 _trace send_request_body.started request=<Request [b'POST']>
+DEBUG 2025-02-11 14:10:57,272 _trace send_request_body.complete
+DEBUG 2025-02-11 14:10:57,275 _trace receive_response_headers.started request=<Request [b'POST']>
+DEBUG 2025-02-11 14:10:58,276 _trace receive_response_headers.complete return_value=(b'HTTP/1.1', 401, b'Unauthorized', [(b'Date', b'Tue, 11 Feb 2025 14:10:58 GMT'), (b'Content-Length', b'0'), (b'Connection', b'keep-alive'), (b'access-control-allow-credentials', b'true'), (b'access-control-allow-headers', b'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range,X-OTG-uuid,X-OTG-Version'), (b'access-control-allow-methods', b'GET, POST, PUT, HEAD, PATCH, OPTIONS'), (b'access-control-expose-headers', b'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range,X-OTG-uuid,X-OTG-Version'), (b'Cache-Control', b'no-cache, no-store, must-revalidate'), (b'expires', b'0'), (b'instafin-backend', b'11740475e6f3d2e87f9fd099d726282cb112a7c3'), (b'instafin-frontend', b'/assets/'), (b'pragma', b'no-cache'), (b'trace-id', b'3bdd0b4bdcec10b507d2b89fd7dfd36f'), (b'vary', b'Accept-Encoding'), (b'www-authenticate', b'Basic realm="Unauthorized"'), (b'x-content-type-options', b'nosniff'), (b'x-correlation-id', b'3bdd0b4bdcec10b507d2b89fd7dfd36f'), (b'x-envoy-upstream-service-time', b'46'), (b'x-frame-options', b'SAMEORIGIN'), (b'x-tracetook', b'45'), (b'x-xss-protection', b'1; mode=block'), (b'cf-cache-status', b'DYNAMIC'), (b'Report-To', b'{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=sLjlCcuNUtoWqEhnP7yDo%2F9z8fKLoDWreYoQt6Ox2w4pn2wrfDzvzC0ZPvD1oEQAZJsWSMfVJF%2F0D1xy2ujY6Cpq7shOk4xkSV8bx8NfnoFr9%2B9uh5HHGMEyzSwDGoN360TPEmPiyytiXq4J5vTdMOPf%2FSYuPH8vsj6r"}],"group":"cf-nel","max_age":604800}'), (b'NEL', b'{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9104ece40d5595f5-JNB'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'server-timing', b'cfL4;desc="?proto=TCP&rtt=49195&min_rtt=35429&rtt_var=17530&sent=6&recv=9&lost=0&retrans=0&sent_bytes=2846&recv_bytes=1019&delivery_rate=75465&cwnd=242&unsent_bytes=0&cid=c01a7d585ab6767e&ts=1017&x=0"')])
+INFO 2025-02-11 14:10:58,283 _client HTTP Request: POST https://wisrodtraining.instafin.info/submit/account.LookupDebts "HTTP/1.1 401 Unauthorized"
+DEBUG 2025-02-11 14:10:58,285 _trace receive_response_body.started request=<Request [b'POST']>
+DEBUG 2025-02-11 14:10:58,290 _trace receive_response_body.complete
+DEBUG 2025-02-11 14:10:58,294 _trace response_closed.started
+DEBUG 2025-02-11 14:10:58,296 _trace response_closed.complete
+DEBUG 2025-02-11 14:10:58,321 _trace close.started
+DEBUG 2025-02-11 14:10:58,334 _trace close.complete
+WARNING 2025-02-11 14:11:12,708 log Not Found: /favicon.ico
+DEBUG 2025-02-11 14:11:31,954 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:11:36,285 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:11:42,234 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:11:42,268 _trace connect_tcp.started host='wisrodtraining.instafin.info' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG 2025-02-11 14:11:42,327 _trace connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7705ef5147d0>
+DEBUG 2025-02-11 14:11:42,328 _trace start_tls.started ssl_context=<ssl.SSLContext object at 0x7705f404a350> server_hostname='wisrodtraining.instafin.info' timeout=5.0
+DEBUG 2025-02-11 14:11:42,361 _trace start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7705f40804a0>
+DEBUG 2025-02-11 14:11:42,362 _trace send_request_headers.started request=<Request [b'POST']>
+DEBUG 2025-02-11 14:11:42,364 _trace send_request_headers.complete
+DEBUG 2025-02-11 14:11:42,364 _trace send_request_body.started request=<Request [b'POST']>
+DEBUG 2025-02-11 14:11:42,365 _trace send_request_body.complete
+DEBUG 2025-02-11 14:11:42,366 _trace receive_response_headers.started request=<Request [b'POST']>
+DEBUG 2025-02-11 14:11:43,212 _trace receive_response_headers.complete return_value=(b'HTTP/1.1', 401, b'Unauthorized', [(b'Date', b'Tue, 11 Feb 2025 14:11:43 GMT'), (b'Content-Length', b'0'), (b'Connection', b'keep-alive'), (b'access-control-allow-credentials', b'true'), (b'access-control-allow-headers', b'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range,X-OTG-uuid,X-OTG-Version'), (b'access-control-allow-methods', b'GET, POST, PUT, HEAD, PATCH, OPTIONS'), (b'access-control-expose-headers', b'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range,X-OTG-uuid,X-OTG-Version'), (b'Cache-Control', b'no-cache, no-store, must-revalidate'), (b'expires', b'0'), (b'instafin-backend', b'11740475e6f3d2e87f9fd099d726282cb112a7c3'), (b'instafin-frontend', b'/assets/'), (b'pragma', b'no-cache'), (b'trace-id', b'0912892039defae952f6edec5e27ed89'), (b'vary', b'Accept-Encoding'), (b'www-authenticate', b'Basic realm="Unauthorized"'), (b'x-content-type-options', b'nosniff'), (b'x-correlation-id', b'0912892039defae952f6edec5e27ed89'), (b'x-envoy-upstream-service-time', b'4'), (b'x-frame-options', b'SAMEORIGIN'), (b'x-tracetook', b'3'), (b'x-xss-protection', b'1; mode=block'), (b'cf-cache-status', b'DYNAMIC'), (b'Report-To', b'{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=2PKFsK6aRokbKOrM8ZjWIfkCpbbL%2BY2OXf7iBJ8G461vP4AhpZNf0ElUgF6xMcAH1VUSCtkh1VngBgQ195a5iKdQCVy6yQk1244EN4MacVuvxRIoH70bSLoefiLsoy7LlP8R086DJUB2%2BkvpjoPwQ5IB3JeumzAe3dJd"}],"group":"cf-nel","max_age":604800}'), (b'NEL', b'{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9104edfdde2b95f2-JNB'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'server-timing', b'cfL4;desc="?proto=TCP&rtt=26723&min_rtt=20362&rtt_var=10888&sent=6&recv=10&lost=0&retrans=0&sent_bytes=2845&recv_bytes=1019&delivery_rate=198019&cwnd=253&unsent_bytes=0&cid=3b7e4bd89d5bb759&ts=793&x=0"')])
+INFO 2025-02-11 14:11:43,214 _client HTTP Request: POST https://wisrodtraining.instafin.info/submit/account.LookupDebts "HTTP/1.1 401 Unauthorized"
+DEBUG 2025-02-11 14:11:43,214 _trace receive_response_body.started request=<Request [b'POST']>
+DEBUG 2025-02-11 14:11:43,214 _trace receive_response_body.complete
+DEBUG 2025-02-11 14:11:43,215 _trace response_closed.started
+DEBUG 2025-02-11 14:11:43,215 _trace response_closed.complete
+DEBUG 2025-02-11 14:11:43,217 _trace close.started
+DEBUG 2025-02-11 14:11:43,217 _trace close.complete
+DEBUG 2025-02-11 14:12:51,907 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:12:59,067 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:13:03,177 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:13:03,274 _trace connect_tcp.started host='wisrodtraining.instafin.info' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG 2025-02-11 14:13:03,402 _trace connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7705f4081400>
+DEBUG 2025-02-11 14:13:03,403 _trace start_tls.started ssl_context=<ssl.SSLContext object at 0x7705f417cd50> server_hostname='wisrodtraining.instafin.info' timeout=5.0
+DEBUG 2025-02-11 14:13:03,452 _trace start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7705f4b845f0>
+DEBUG 2025-02-11 14:13:03,452 _trace send_request_headers.started request=<Request [b'POST']>
+DEBUG 2025-02-11 14:13:03,453 _trace send_request_headers.complete
+DEBUG 2025-02-11 14:13:03,453 _trace send_request_body.started request=<Request [b'POST']>
+DEBUG 2025-02-11 14:13:03,454 _trace send_request_body.complete
+DEBUG 2025-02-11 14:13:03,454 _trace receive_response_headers.started request=<Request [b'POST']>
+DEBUG 2025-02-11 14:13:03,896 _trace receive_response_headers.complete return_value=(b'HTTP/1.1', 401, b'Unauthorized', [(b'Date', b'Tue, 11 Feb 2025 14:13:03 GMT'), (b'Content-Length', b'0'), (b'Connection', b'keep-alive'), (b'access-control-allow-credentials', b'true'), (b'access-control-allow-headers', b'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range,X-OTG-uuid,X-OTG-Version'), (b'access-control-allow-methods', b'GET, POST, PUT, HEAD, PATCH, OPTIONS'), (b'access-control-expose-headers', b'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range,X-OTG-uuid,X-OTG-Version'), (b'Cache-Control', b'no-cache, no-store, must-revalidate'), (b'expires', b'0'), (b'instafin-backend', b'11740475e6f3d2e87f9fd099d726282cb112a7c3'), (b'instafin-frontend', b'/assets/'), (b'pragma', b'no-cache'), (b'trace-id', b'97ee0db884b0d084e4fd54ad1f8bf96d'), (b'vary', b'Accept-Encoding'), (b'www-authenticate', b'Basic realm="Unauthorized"'), (b'x-content-type-options', b'nosniff'), (b'x-correlation-id', b'97ee0db884b0d084e4fd54ad1f8bf96d'), (b'x-envoy-upstream-service-time', b'4'), (b'x-frame-options', b'SAMEORIGIN'), (b'x-tracetook', b'3'), (b'x-xss-protection', b'1; mode=block'), (b'cf-cache-status', b'DYNAMIC'), (b'Report-To', b'{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=GK3Xk8sdy9qFs836idhf9v5up1u9TjW%2BDOiVWUde%2FfwgqKVRSrYWMAANRAYj5TL7J3ACQQM5OoI5dKQX2%2B4guA%2BY%2BI3hjmTZduye%2BBfvawvrhHDMzaqyDV0jn3st077I1h733cUYpIG6R3JDoAf165aNB8zcuxFEpidM"}],"group":"cf-nel","max_age":604800}'), (b'NEL', b'{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9104eff8acd995ed-JNB'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'server-timing', b'cfL4;desc="?proto=TCP&rtt=29030&min_rtt=26637&rtt_var=6928&sent=6&recv=10&lost=0&retrans=0&sent_bytes=2846&recv_bytes=1020&delivery_rate=134729&cwnd=246&unsent_bytes=0&cid=d4ca35432aa87f5d&ts=442&x=0"')])
+INFO 2025-02-11 14:13:03,897 _client HTTP Request: POST https://wisrodtraining.instafin.info/submit/account.LookupDebts "HTTP/1.1 401 Unauthorized"
+DEBUG 2025-02-11 14:13:03,897 _trace receive_response_body.started request=<Request [b'POST']>
+DEBUG 2025-02-11 14:13:03,898 _trace receive_response_body.complete
+DEBUG 2025-02-11 14:13:03,898 _trace response_closed.started
+DEBUG 2025-02-11 14:13:03,898 _trace response_closed.complete
+DEBUG 2025-02-11 14:13:03,899 _trace close.started
+DEBUG 2025-02-11 14:13:03,900 _trace close.complete
+DEBUG 2025-02-11 14:15:26,776 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:16:14,309 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:18:04,139 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:18:11,535 selector_events Using selector: EpollSelector
+INFO 2025-02-11 14:24:39,251 autoreload /home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_backend/communications/views.py changed, reloading.
+INFO 2025-02-11 14:24:41,685 autoreload Watching for file changes with StatReloader
+INFO 2025-02-11 14:25:28,938 autoreload /home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_backend/communications/views.py changed, reloading.
+INFO 2025-02-11 14:25:32,088 autoreload Watching for file changes with StatReloader
+DEBUG 2025-02-11 14:25:43,636 selector_events Using selector: EpollSelector
+WARNING 2025-02-11 14:25:52,008 log Not Found: /favicon.ico
+WARNING 2025-02-11 14:25:52,009 log Not Found: /ws/chat/
+DEBUG 2025-02-11 14:25:56,085 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:28:14,064 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:28:53,571 selector_events Using selector: EpollSelector
+INFO 2025-02-11 14:31:39,597 autoreload /home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_backend/communications/views.py changed, reloading.
+INFO 2025-02-11 14:31:43,217 autoreload Watching for file changes with StatReloader
+DEBUG 2025-02-11 14:31:57,470 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:32:12,413 selector_events Using selector: EpollSelector
+WARNING 2025-02-11 14:35:51,392 log Not Found: /favicon.ico
+DEBUG 2025-02-11 14:41:23,474 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:41:54,125 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:43:07,259 selector_events Using selector: EpollSelector
+INFO 2025-02-11 14:43:38,251 autoreload /home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_backend/communications/views.py changed, reloading.
+INFO 2025-02-11 14:43:41,376 autoreload Watching for file changes with StatReloader
+DEBUG 2025-02-11 14:43:55,366 selector_events Using selector: EpollSelector
+INFO 2025-02-11 14:45:56,170 autoreload /home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_backend/communications/views.py changed, reloading.
+INFO 2025-02-11 14:46:15,933 autoreload Watching for file changes with StatReloader
+DEBUG 2025-02-11 14:46:35,619 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:46:42,045 selector_events Using selector: EpollSelector
+INFO 2025-02-11 14:49:17,837 autoreload /home/x0d4x/barn/work_bench/work_work/instafin_v2/instafin_backend/users/models.py changed, reloading.
+INFO 2025-02-11 14:49:22,890 autoreload Watching for file changes with StatReloader
+DEBUG 2025-02-11 14:49:33,975 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:49:48,253 selector_events Using selector: EpollSelector
+INFO 2025-02-11 14:53:23,781 autoreload Watching for file changes with StatReloader
+DEBUG 2025-02-11 14:53:35,137 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:53:47,907 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:54:07,387 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:54:08,175 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:54:28,648 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:54:44,453 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:54:45,045 selector_events Using selector: EpollSelector
+DEBUG 2025-02-11 14:55:19,584 selector_events Using selector: EpollSelector

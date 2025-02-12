@@ -24,10 +24,15 @@ class User(AbstractUser):
     
     # Remove username field and make email required
     username = None
-    email = models.EmailField(_('email address'), unique=True)
+    email = models.EmailField(null=True, blank=True)
     
     # Identity and verification
-    phone_number = models.CharField(max_length=15, unique=True, null=True)
+    phone_number = models.CharField(
+        max_length=20, 
+        unique=True, 
+        null=True,  # Allow null temporarily for migration
+        blank=True
+    )
     date_of_birth = models.DateField(null=True)
     national_id = models.CharField(max_length=20, unique=True, null=True)
     is_verified = models.BooleanField(default=False)
@@ -46,7 +51,7 @@ class User(AbstractUser):
     updated_at = models.DateTimeField(auto_now=True)
 
     # Specify email as the username field
-    USERNAME_FIELD = 'email'
+    USERNAME_FIELD = 'phone_number'
     REQUIRED_FIELDS = []
     
     # Add the custom manager

@@ -6,6 +6,9 @@ from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from .models import Category, NLUModel, FAQ, TrainingSession
 from .forms import CategoryForm, NLUModelForm, FAQForm, TrainingSessionForm
+from .services import TrainingService
+import asyncio
+from django.views.decorators.http import require_POST
 
 # Category Views
 class CategoryListView(LoginRequiredMixin, ListView):
@@ -81,17 +84,35 @@ class FAQUpdateView(LoginRequiredMixin, UpdateView):
     success_url = reverse_lazy('intelligence:faq_list')
 
 # API Views for AJAX operations
+@require_POST
 def start_training(request, model_id):
+    """Start training process for an NLU model"""
     model = get_object_or_404(NLUModel, pk=model_id)
     if not model.is_training:
-        session = TrainingSession.objects.create(
-            model=model,
-            status='pending'
-        )
-        # Here you would typically trigger your actual training process
-        # For example, using Celery or similar
-        return JsonResponse({'status': 'success', 'session_id': session.id})
-    return JsonResponse({'status': 'error', 'message': 'Model is already training'})
+        try:
+            # Create training session
+            session = TrainingSession.objects.create(
+                model=model,
+                status='pending'
+            )
+            
+            # Start async training process
+            training_service = TrainingService()
+            asyncio.create_task(training_service.train_model(model.id))
+            
+            return JsonResponse({
+                'status': 'success',
+                'session_id': session.id
+            })
+        except Exception as e:
+            return JsonResponse({
+                'status': 'error',
+                'message': str(e)
+            })
+    return JsonResponse({
+        'status': 'error',
+        'message': 'Model is already training'
+    })
 
 def get_training_status(request, session_id):
     session = get_object_or_404(TrainingSession, pk=session_id)

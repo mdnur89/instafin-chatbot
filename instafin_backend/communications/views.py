@@ -15,6 +15,14 @@ from .forms import (
     SupportTicketForm, TicketResponseForm, BulkNotificationForm
 )
 from django.views.generic import ListView
+from django.contrib.auth import get_user_model
+from django.utils.crypto import get_random_string
+from typing import Tuple
+from rest_framework.views import APIView
+import logging
+import time
+
+logger = logging.getLogger(__name__)
 
 # Create your views here.
 
@@ -193,7 +201,6 @@ def ticket_create(request):
 
 # Utility Functions
 def get_user_choices():
-    from django.contrib.auth import get_user_model
     User = get_user_model()
     return User.objects.filter(is_active=True).values_list('id', 'email')
 
@@ -222,3 +229,71 @@ class ChatSessionListView(ListView):
                 platform_message.values('platform__platform')[:1]
             )
         ).order_by('-started_at')
+
+class TwilioWebhookView(APIView):
+    async def get_or_create_session(self, phone_number: str) -> Tuple[ChatSession, bool]:
+        try:
+            User = get_user_model()
+            logger.info(f"Processing WhatsApp message from: {phone_number}")
+            
+            # First try to find existing user by phone number
+            existing_user = await User.objects.filter(phone_number=phone_number).afirst()
+            logger.info(f"Existing user found: {existing_user is not None}")
+            
+            if existing_user:
+                user = existing_user
+                logger.info(f"Using existing user with phone: {phone_number}")
+            else:
+                # Generate unique email with more entropy
+                timestamp = int(time.time() * 1000)  # millisecond precision
+                unique_suffix = get_random_string(16)  # increased from 8 to 16
+                sanitized_phone = phone_number.replace('+', '').replace('-', '')
+                unique_email = f"wa_{timestamp}_{unique_suffix}@chat.instafin.local"
+                
+                logger.info(f"Creating new user with email: {unique_email}")
+                
+                # Create user with try-except block
+                try:
+                    user = await User.objects.acreate(
+                        phone_number=phone_number,
+                        email=unique_email,
+                        first_name=f'WhatsApp User',
+                        last_name=sanitized_phone[-4:],
+                        is_active=True
+                    )
+                    logger.info(f"Successfully created new user for phone: {phone_number}")
+                except Exception as e:
+                    logger.error(f"Failed to create user: {str(e)}")
+                    raise
+            
+            # Get or create session
+            session, created = await ChatSession.objects.aget_or_create(
+                user=user,
+                platform='whatsapp',
+                defaults={
+                    'channel_type': 'whatsapp',
+                    'metadata': {'phone_number': phone_number}
+                }
+            )
+            logger.info(f"Chat session {'created' if created else 'retrieved'} for phone: {phone_number}")
+            
+            return session, created
+            
+        except Exception as e:
+            logger.error(f"Error in get_or_create_session: {str(e)}")
+            raise
+
+    async def post(self, request, *args, **kwargs):
+        try:
+            phone_number = request.data.get('From', '').split(':')[-1]  # Extract number from "whatsapp:+1234567890"
+            message = request.data.get('Body', '')
+            
+            session, _ = await self.get_or_create_session(phone_number)
+            
+            # Process message logic here
+            
+            return JsonResponse({"status": "success"})
+            
+        except Exception as e:
+            logger.error(f"Error processing webhook: {str(e)}")
+            return JsonResponse({"status": "error", "message": "Could not process message at this time"})
