@@ -22,19 +22,23 @@ class User(AbstractUser):
         SPANISH = 'ES', _('Spanish')
         FRENCH = 'FR', _('French')
     
-    # Remove username field and make email required
-    username = None
-    email = models.EmailField(null=True, blank=True)
+    class Platform(models.TextChoices):
+        FACEBOOK = 'FACEBOOK', _('Facebook')
+        WHATSAPP = 'WHATSAPP', _('WhatsApp')
+        INSTAGRAM = 'INSTAGRAM', _('Instagram')
     
+    username = models.SlugField(_("username"),unique=True, null=True, blank=True)
+    email = models.EmailField(_('email address'), unique=True, null=True, blank=True)
+    wisrod_account_id  = models.CharField(_("Wisrod Client Account ID"), max_length=10, null=True, blank=True)
     # Identity and verification
     phone_number = models.CharField(
         max_length=20, 
         unique=True, 
-        null=True,  # Allow null temporarily for migration
+        null=True,
         blank=True
     )
-    date_of_birth = models.DateField(null=True)
-    national_id = models.CharField(max_length=20, unique=True, null=True)
+    date_of_birth = models.DateField(null=True, blank=True)
+    national_id = models.CharField(max_length=20, unique=True, null=True, blank=True)
     is_verified = models.BooleanField(default=False)
     
     # Financial indicators
@@ -46,16 +50,31 @@ class User(AbstractUser):
         default=0.00
     )
     
+    # Contact preferences
+    contact_preference = models.CharField(
+        max_length=10,
+        choices=ContactPreference.choices,
+        default=ContactPreference.IN_APP
+    )
+    
+    # Language preference
+    language = models.CharField(
+        max_length=2,
+        choices=Language.choices,
+        default=Language.ENGLISH
+    )
+    
+    # Platform (e.g., Facebook, WhatsApp, Instagram)
+    platform = models.CharField(
+        max_length=10,
+        choices=Platform.choices,
+        default=Platform.FACEBOOK
+    )
+    
     # Timestamps
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    # Specify email as the username field
-    USERNAME_FIELD = 'phone_number'
-    REQUIRED_FIELDS = []
-    
-    # Add the custom manager
-    objects = CustomUserManager()
 
     class Meta:
         verbose_name = _('user')
@@ -63,6 +82,7 @@ class User(AbstractUser):
         indexes = [
             models.Index(fields=['phone_number']),
             models.Index(fields=['national_id']),
+            models.Index(fields=['email']),
         ]
 
     def __str__(self):

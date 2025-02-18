@@ -290,3 +290,645 @@ DEBUG 2025-02-11 14:54:28,648 selector_events Using selector: EpollSelector
 DEBUG 2025-02-11 14:54:44,453 selector_events Using selector: EpollSelector
 DEBUG 2025-02-11 14:54:45,045 selector_events Using selector: EpollSelector
 DEBUG 2025-02-11 14:55:19,584 selector_events Using selector: EpollSelector
+INFO 2025-02-14 08:39:21,193 autoreload Watching for file changes with StatReloader
+WARNING 2025-02-14 08:39:39,451 log Not Found: /ws/chat/
+WARNING 2025-02-14 08:39:58,765 log Not Found: /webhook/
+WARNING 2025-02-14 08:40:07,742 log Not Found: /webhook/fb-messanger/
+WARNING 2025-02-14 08:40:12,933 log Not Found: /webhook/fb-messanger/
+WARNING 2025-02-14 08:40:38,309 log Forbidden: /fb-messanger/webhook/
+INFO 2025-02-14 08:45:38,423 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/instafin_backend/settings.py changed, reloading.
+INFO 2025-02-14 08:45:39,851 autoreload Watching for file changes with StatReloader
+WARNING 2025-02-14 08:45:41,903 log Forbidden: /fb-messanger/webhook/
+INFO 2025-02-14 08:47:06,520 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/views.py changed, reloading.
+INFO 2025-02-14 08:47:07,799 autoreload Watching for file changes with StatReloader
+WARNING 2025-02-14 08:47:15,966 log Forbidden: /fb-messanger/webhook/
+INFO 2025-02-14 08:48:59,714 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/views.py changed, reloading.
+INFO 2025-02-14 08:49:00,981 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 08:49:05,108 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/views.py changed, reloading.
+INFO 2025-02-14 08:49:06,419 autoreload Watching for file changes with StatReloader
+DEBUG 2025-02-14 08:52:03,893 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-14 08:52:05,691 connectionpool https://graph.facebook.com:443 "POST /v15.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+INFO 2025-02-14 08:58:16,784 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/views.py changed, reloading.
+INFO 2025-02-14 08:58:18,025 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 09:48:41,869 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/instafin_backend/settings.py changed, reloading.
+INFO 2025-02-14 09:48:43,487 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 09:51:35,298 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 10:00:43,082 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/views.py changed, reloading.
+INFO 2025-02-14 10:00:44,498 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 10:02:35,821 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/views.py changed, reloading.
+INFO 2025-02-14 10:02:37,263 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 10:04:02,616 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/views.py changed, reloading.
+INFO 2025-02-14 10:04:03,909 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 10:04:32,049 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/views.py changed, reloading.
+INFO 2025-02-14 10:04:33,389 autoreload Watching for file changes with StatReloader
+DEBUG 2025-02-14 10:05:14,668 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-14 10:05:21,003 connectionpool https://graph.facebook.com:443 "POST /v15.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+INFO 2025-02-14 10:06:27,451 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/views.py changed, reloading.
+INFO 2025-02-14 10:06:28,919 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 10:06:46,679 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/views.py changed, reloading.
+INFO 2025-02-14 10:06:48,070 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 10:39:42,975 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/views.py changed, reloading.
+INFO 2025-02-14 10:39:44,391 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 10:39:47,484 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py changed, reloading.
+INFO 2025-02-14 10:39:48,752 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 10:48:26,505 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py changed, reloading.
+INFO 2025-02-14 10:48:28,086 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 11:00:43,521 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/users/models.py changed, reloading.
+INFO 2025-02-14 11:00:44,799 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 11:02:42,253 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py changed, reloading.
+INFO 2025-02-14 11:02:43,495 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 11:03:14,463 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/users/models.py changed, reloading.
+INFO 2025-02-14 11:03:15,735 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 11:03:32,276 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py changed, reloading.
+INFO 2025-02-14 11:03:33,534 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 11:03:42,642 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py changed, reloading.
+INFO 2025-02-14 11:03:43,941 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 11:04:31,870 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py changed, reloading.
+INFO 2025-02-14 11:04:33,279 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 11:21:38,330 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py changed, reloading.
+INFO 2025-02-14 11:21:39,638 autoreload Watching for file changes with StatReloader
+DEBUG 2025-02-14 11:22:29,110 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-14 11:22:30,005 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-14 11:22:30,010 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-14 11:22:30,785 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+INFO 2025-02-14 11:36:40,117 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 11:38:52,816 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/users/models.py changed, reloading.
+INFO 2025-02-14 11:38:53,800 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 11:39:06,547 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/users/models.py changed, reloading.
+INFO 2025-02-14 11:39:07,519 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 11:39:09,958 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/users/models.py changed, reloading.
+INFO 2025-02-14 11:39:10,830 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 11:39:46,405 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/users/managers.py changed, reloading.
+INFO 2025-02-14 11:39:47,327 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 11:39:49,768 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/users/managers.py changed, reloading.
+INFO 2025-02-14 11:39:50,792 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 11:40:01,481 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/users/managers.py changed, reloading.
+INFO 2025-02-14 11:40:02,641 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 11:41:33,130 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/users/managers.py changed, reloading.
+INFO 2025-02-14 11:41:34,096 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 11:55:55,252 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/users/managers.py changed, reloading.
+INFO 2025-02-14 11:55:56,127 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 12:00:25,732 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 12:18:48,040 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py changed, reloading.
+INFO 2025-02-14 12:18:49,102 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 12:26:25,172 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py changed, reloading.
+INFO 2025-02-14 12:26:26,108 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 12:26:34,644 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py changed, reloading.
+INFO 2025-02-14 12:26:35,516 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 12:27:39,891 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py changed, reloading.
+INFO 2025-02-14 12:27:40,804 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 12:28:49,408 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py changed, reloading.
+INFO 2025-02-14 12:28:50,280 autoreload Watching for file changes with StatReloader
+ERROR 2025-02-14 12:29:07,581 log Internal Server Error: /fb-messanger/webhook/
+Traceback (most recent call last):
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/views.py", line 38, in messenger_webhook
+    response = handle_user_interaction(sender_id, message_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py", line 10, in handle_user_interaction
+    user = User.objects.get(unique_identifier=user_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 635, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1491, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1303, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1768, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'unique_identifier' into field. Choices are: age_verification, analyticsevent, assigned_escalations, assigned_tickets, availability, chat_sessions, chat_verified_documents, chatmessage, communicationauditlog, communications, contact_preference, created_at, credit_score, current_balance, date_joined, date_of_birth, dependents, document, documentrequest, email, engagement_metrics, feedback, first_name, groups, guardian_control, handled_chats, id, is_active, is_staff, is_superuser, is_verified, language, last_login, last_name, loan_audit_logs, loan_decisions, loanapplication, logentry, monitoring_audit_logs, national_id, notifications, password, performance_metrics, phone_number, platform, preference_changes, preference_history, preferences, profile, received_communications, risk_level, sent_communications, support_tickets, ticketresponse, updated_at, user_permissions, username, verified_age_documents, verified_documents
+ERROR 2025-02-14 12:29:34,001 log Internal Server Error: /fb-messanger/webhook/
+Traceback (most recent call last):
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/views.py", line 38, in messenger_webhook
+    response = handle_user_interaction(sender_id, message_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py", line 10, in handle_user_interaction
+    user = User.objects.get(unique_identifier=user_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 635, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1491, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1303, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1768, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'unique_identifier' into field. Choices are: age_verification, analyticsevent, assigned_escalations, assigned_tickets, availability, chat_sessions, chat_verified_documents, chatmessage, communicationauditlog, communications, contact_preference, created_at, credit_score, current_balance, date_joined, date_of_birth, dependents, document, documentrequest, email, engagement_metrics, feedback, first_name, groups, guardian_control, handled_chats, id, is_active, is_staff, is_superuser, is_verified, language, last_login, last_name, loan_audit_logs, loan_decisions, loanapplication, logentry, monitoring_audit_logs, national_id, notifications, password, performance_metrics, phone_number, platform, preference_changes, preference_history, preferences, profile, received_communications, risk_level, sent_communications, support_tickets, ticketresponse, updated_at, user_permissions, username, verified_age_documents, verified_documents
+INFO 2025-02-14 12:30:07,557 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py changed, reloading.
+INFO 2025-02-14 12:30:08,613 autoreload Watching for file changes with StatReloader
+ERROR 2025-02-14 12:30:17,575 log Internal Server Error: /fb-messanger/webhook/
+Traceback (most recent call last):
+  File "/home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py", line 10, in handle_user_interaction
+    user = User.objects.get(username=user_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+users.models.User.DoesNotExist: User matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 103, in _execute
+    return self.cursor.execute(sql)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 350, in execute
+    return super().execute(query)
+           ^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: wisrod_cache_db
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/views.py", line 38, in messenger_webhook
+    response = handle_user_interaction(sender_id, message_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py", line 17, in handle_user_interaction
+    set_state(user_id, MAIN_MENU)
+  File "/home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/states.py", line 19, in set_state
+    set_user_state(user_id, state, timeout)
+  File "/home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/cache.py", line 7, in set_user_state
+    cache.set(f"user_state_{user_id}", state, timeout)
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/core/cache/backends/db.py", line 102, in set
+    self._base_set("set", key, value, timeout)
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/core/cache/backends/db.py", line 120, in _base_set
+    cursor.execute("SELECT COUNT(*) FROM %s" % table)
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 103, in _execute
+    return self.cursor.execute(sql)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 350, in execute
+    return super().execute(query)
+           ^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: wisrod_cache_db
+ERROR 2025-02-14 12:30:35,376 log Internal Server Error: /fb-messanger/webhook/
+Traceback (most recent call last):
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/views.py", line 38, in messenger_webhook
+    response = handle_user_interaction(sender_id, message_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py", line 11, in handle_user_interaction
+    return existing_user_menu(user)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: existing_user_menu() missing 1 required positional argument: 'message_text'
+ERROR 2025-02-14 12:31:06,883 log Internal Server Error: /fb-messanger/webhook/
+Traceback (most recent call last):
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/views.py", line 38, in messenger_webhook
+    response = handle_user_interaction(sender_id, message_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py", line 11, in handle_user_interaction
+    return existing_user_menu(user)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: existing_user_menu() missing 1 required positional argument: 'message_text'
+INFO 2025-02-14 12:31:44,223 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py changed, reloading.
+INFO 2025-02-14 12:31:45,131 autoreload Watching for file changes with StatReloader
+DEBUG 2025-02-14 12:31:55,802 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-14 12:31:57,562 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-14 12:31:57,565 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-14 12:31:58,841 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+INFO 2025-02-14 12:31:59,047 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py changed, reloading.
+INFO 2025-02-14 12:32:00,039 autoreload Watching for file changes with StatReloader
+DEBUG 2025-02-14 12:32:02,191 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-14 12:32:03,568 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-14 12:32:03,569 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-14 12:32:04,727 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-14 12:32:06,170 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-14 12:32:07,389 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-14 12:32:07,394 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-14 12:32:08,909 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-14 12:32:11,391 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-14 12:32:12,783 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-14 12:32:12,785 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-14 12:32:14,201 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-14 12:32:16,050 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-14 12:32:17,569 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-14 12:32:17,571 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-14 12:32:19,773 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+INFO 2025-02-14 12:42:25,544 autoreload Watching for file changes with StatReloader
+WARNING 2025-02-14 12:43:10,756 log Not Found: /favicon.ico
+WARNING 2025-02-14 12:43:21,598 log Not Found: /favicon.ico
+WARNING 2025-02-14 12:43:31,654 log Not Found: /favicon.ico
+WARNING 2025-02-14 12:43:34,095 log Not Found: /favicon.ico
+WARNING 2025-02-14 12:43:47,073 log Not Found: /favicon.ico
+WARNING 2025-02-14 12:45:56,204 log Not Found: /favicon.ico
+DEBUG 2025-02-14 12:47:09,384 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-14 12:47:11,870 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-14 12:47:11,873 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-14 12:47:12,689 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-14 12:47:17,897 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-14 12:47:18,772 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-14 12:47:18,775 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-14 12:47:19,777 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-14 12:50:21,176 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-14 12:50:22,395 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-14 12:50:22,397 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-14 12:50:23,316 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+WARNING 2025-02-14 12:50:40,696 log Not Found: /favicon.ico
+WARNING 2025-02-14 12:50:50,219 log Not Found: /favicon.ico
+WARNING 2025-02-14 12:50:53,382 log Not Found: /favicon.ico
+DEBUG 2025-02-14 12:51:09,832 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-14 12:51:10,735 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-14 12:51:10,737 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-14 12:51:11,685 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+INFO 2025-02-14 13:24:58,845 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py changed, reloading.
+INFO 2025-02-14 13:25:00,020 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 13:25:18,182 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py changed, reloading.
+INFO 2025-02-14 13:25:19,090 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 13:27:04,680 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py changed, reloading.
+INFO 2025-02-14 13:27:05,572 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 13:27:22,498 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py changed, reloading.
+INFO 2025-02-14 13:27:23,591 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 13:27:53,898 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py changed, reloading.
+INFO 2025-02-14 13:27:54,844 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 13:38:18,162 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py changed, reloading.
+INFO 2025-02-14 13:38:19,098 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 13:39:43,470 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py changed, reloading.
+INFO 2025-02-14 13:39:44,403 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 14:07:14,321 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/states.py changed, reloading.
+INFO 2025-02-14 14:07:15,207 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 14:07:47,332 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/states.py changed, reloading.
+INFO 2025-02-14 14:07:48,255 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 14:08:03,001 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/states.py changed, reloading.
+INFO 2025-02-14 14:08:03,882 autoreload Watching for file changes with StatReloader
+WARNING 2025-02-14 14:09:33,997 log Not Found: /ws/chat/
+WARNING 2025-02-14 14:09:40,593 log Not Found: /favicon.ico
+WARNING 2025-02-14 14:09:50,042 log Not Found: /favicon.ico
+WARNING 2025-02-14 14:09:58,255 log Not Found: /favicon.ico
+WARNING 2025-02-14 14:10:00,232 log Not Found: /favicon.ico
+WARNING 2025-02-14 14:40:12,035 log Not Found: /ws/chat/
+WARNING 2025-02-14 14:40:24,664 log Not Found: /favicon.ico
+DEBUG 2025-02-14 14:40:36,359 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-14 14:40:37,443 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-14 14:40:37,447 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-14 14:40:38,289 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-14 14:41:00,490 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-14 14:41:01,458 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-14 14:42:42,644 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-14 14:42:43,550 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-14 14:42:43,554 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-14 14:42:44,534 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+INFO 2025-02-14 14:44:31,516 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/states.py changed, reloading.
+INFO 2025-02-14 14:44:32,811 autoreload Watching for file changes with StatReloader
+INFO 2025-02-14 14:44:45,644 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/states.py changed, reloading.
+INFO 2025-02-14 14:44:46,508 autoreload Watching for file changes with StatReloader
+WARNING 2025-02-14 14:45:08,340 log Not Found: /favicon.ico
+INFO 2025-02-15 12:19:09,569 autoreload Watching for file changes with StatReloader
+WARNING 2025-02-15 12:19:23,693 log Not Found: /ws/chat/
+WARNING 2025-02-15 12:38:43,409 log Not Found: /favicon.ico
+WARNING 2025-02-15 12:39:00,671 log Not Found: /favicon.ico
+WARNING 2025-02-15 12:39:02,722 log Not Found: /favicon.ico
+DEBUG 2025-02-15 12:39:09,435 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 12:39:10,497 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-15 12:39:10,499 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 12:39:11,296 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-15 12:39:17,108 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 12:39:18,010 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+WARNING 2025-02-15 12:58:26,193 log Not Found: /favicon.ico
+WARNING 2025-02-15 12:58:32,734 log Not Found: /favicon.ico
+WARNING 2025-02-15 12:58:34,794 log Not Found: /favicon.ico
+DEBUG 2025-02-15 12:59:10,808 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 12:59:11,848 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-15 12:59:11,850 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 12:59:12,607 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+INFO 2025-02-15 12:59:30,971 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/states.py changed, reloading.
+INFO 2025-02-15 12:59:32,187 autoreload Watching for file changes with StatReloader
+INFO 2025-02-15 13:00:53,475 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/users/models.py changed, reloading.
+INFO 2025-02-15 13:00:54,409 autoreload Watching for file changes with StatReloader
+INFO 2025-02-15 13:04:48,378 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/states.py changed, reloading.
+INFO 2025-02-15 13:04:49,258 autoreload Watching for file changes with StatReloader
+INFO 2025-02-15 13:05:06,059 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/states.py changed, reloading.
+INFO 2025-02-15 13:05:06,978 autoreload Watching for file changes with StatReloader
+DEBUG 2025-02-15 13:05:17,725 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 13:05:18,612 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-15 13:05:18,614 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 13:05:19,612 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+WARNING 2025-02-15 13:05:30,105 log Not Found: /favicon.ico
+INFO 2025-02-15 13:18:31,224 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/states.py changed, reloading.
+INFO 2025-02-15 13:18:32,118 autoreload Watching for file changes with StatReloader
+DEBUG 2025-02-15 13:23:04,391 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 13:23:05,340 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-15 13:23:05,343 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 13:23:06,089 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-15 13:23:13,185 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 13:23:14,030 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+INFO 2025-02-15 13:27:53,629 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/states.py changed, reloading.
+INFO 2025-02-15 13:27:54,499 autoreload Watching for file changes with StatReloader
+INFO 2025-02-15 13:31:22,035 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/states.py changed, reloading.
+INFO 2025-02-15 13:31:22,899 autoreload Watching for file changes with StatReloader
+DEBUG 2025-02-15 13:31:50,799 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 13:31:51,669 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-15 13:31:51,672 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 13:31:52,718 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-15 13:32:03,347 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 13:32:04,061 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-15 13:35:06,211 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 13:35:07,118 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+WARNING 2025-02-15 13:50:46,551 log Not Found: /favicon.ico
+INFO 2025-02-15 13:52:05,604 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/states.py changed, reloading.
+INFO 2025-02-15 13:52:06,692 autoreload Watching for file changes with StatReloader
+DEBUG 2025-02-15 13:53:35,993 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 13:53:37,085 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-15 13:53:37,088 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 13:53:38,013 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-15 13:53:43,858 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 13:53:44,795 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-15 13:54:11,804 connectionpool Starting new HTTPS connection (1): wisrodtraining.instafin.info:443
+DEBUG 2025-02-15 13:54:13,232 connectionpool https://wisrodtraining.instafin.info:443 "POST /submit/instafin.LookupClient/client/lookup HTTP/1.1" 404 None
+DEBUG 2025-02-15 13:54:13,257 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 13:54:14,127 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-15 13:54:14,129 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 13:54:14,857 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+INFO 2025-02-15 14:40:15,268 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/states.py changed, reloading.
+INFO 2025-02-15 14:40:16,580 autoreload Watching for file changes with StatReloader
+INFO 2025-02-15 14:40:48,747 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/states.py changed, reloading.
+INFO 2025-02-15 14:40:49,997 autoreload Watching for file changes with StatReloader
+INFO 2025-02-15 14:41:19,031 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/states.py changed, reloading.
+INFO 2025-02-15 14:41:20,248 autoreload Watching for file changes with StatReloader
+INFO 2025-02-15 14:41:39,822 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/states.py changed, reloading.
+INFO 2025-02-15 14:41:41,226 autoreload Watching for file changes with StatReloader
+WARNING 2025-02-15 14:42:01,447 log Not Found: /favicon.ico
+WARNING 2025-02-15 14:42:16,616 log Not Found: /favicon.ico
+INFO 2025-02-15 14:47:36,491 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/states.py changed, reloading.
+INFO 2025-02-15 14:47:37,829 autoreload Watching for file changes with StatReloader
+DEBUG 2025-02-15 14:56:21,466 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 14:56:22,474 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-15 14:56:22,478 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 14:56:23,512 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-15 14:56:28,816 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 14:56:29,832 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-15 14:56:52,027 connectionpool Starting new HTTPS connection (1): wisrodtraining.instafin.info:443
+DEBUG 2025-02-15 14:56:53,395 connectionpool https://wisrodtraining.instafin.info:443 "POST /submit/instafin.LookupClient/client/lookup HTTP/1.1" 404 None
+ERROR 2025-02-15 14:56:53,475 log Internal Server Error: /fb-messanger/webhook/
+Traceback (most recent call last):
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/views.py", line 38, in messenger_webhook
+    response = handle_user_interaction(sender_id, message_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py", line 11, in handle_user_interaction
+    return existing_user_menu(user_id, message_text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py", line 49, in existing_user_menu
+    return handle_state(user_id, message_text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/states.py", line 59, in handle_state
+    return handler(user_id, input_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/states.py", line 131, in validate_account_id
+    "message": f"Hi {user.name} What would you like to do next?",
+                     ^^^^^^^^^
+AttributeError: 'User' object has no attribute 'name'
+DEBUG 2025-02-15 14:56:56,686 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 14:56:57,450 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-15 14:56:57,454 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 14:56:58,286 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+WARNING 2025-02-15 14:57:08,478 log Not Found: /favicon.ico
+WARNING 2025-02-15 14:57:13,159 log Not Found: /favicon.ico
+DEBUG 2025-02-15 14:58:41,135 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 14:58:42,135 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-15 14:58:42,138 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 14:58:43,159 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+INFO 2025-02-15 14:59:26,721 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/states.py changed, reloading.
+INFO 2025-02-15 14:59:27,964 autoreload Watching for file changes with StatReloader
+DEBUG 2025-02-15 15:00:31,731 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 15:00:32,728 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-15 15:00:39,803 connectionpool Starting new HTTPS connection (1): wisrodtraining.instafin.info:443
+DEBUG 2025-02-15 15:00:40,920 connectionpool https://wisrodtraining.instafin.info:443 "POST /submit/instafin.LookupClient/client/lookup HTTP/1.1" 404 None
+ERROR 2025-02-15 15:00:40,988 log Internal Server Error: /fb-messanger/webhook/
+Traceback (most recent call last):
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/views.py", line 38, in messenger_webhook
+    response = handle_user_interaction(sender_id, message_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py", line 11, in handle_user_interaction
+    return existing_user_menu(user_id, message_text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/services.py", line 49, in existing_user_menu
+    return handle_state(user_id, message_text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/states.py", line 59, in handle_state
+    return handler(user_id, input_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/states.py", line 131, in validate_account_id
+    "message": f"Hi {user.name} What would you like to do next?",
+                     ^^^^^^^^^
+AttributeError: 'User' object has no attribute 'name'
+DEBUG 2025-02-15 15:00:42,782 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 15:00:43,541 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-15 15:00:43,545 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 15:00:44,382 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+INFO 2025-02-15 15:01:10,465 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/states.py changed, reloading.
+INFO 2025-02-15 15:01:11,724 autoreload Watching for file changes with StatReloader
+INFO 2025-02-15 15:01:16,797 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/states.py changed, reloading.
+INFO 2025-02-15 15:01:18,133 autoreload Watching for file changes with StatReloader
+DEBUG 2025-02-15 15:02:22,887 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 15:02:24,249 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-15 15:02:24,253 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 15:02:25,171 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-15 15:02:28,869 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 15:02:29,770 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-15 15:02:44,434 connectionpool Starting new HTTPS connection (1): wisrodtraining.instafin.info:443
+DEBUG 2025-02-15 15:02:45,658 connectionpool https://wisrodtraining.instafin.info:443 "POST /submit/instafin.LookupClient/client/lookup HTTP/1.1" 404 None
+DEBUG 2025-02-15 15:02:45,677 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 15:02:46,461 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-15 15:02:46,464 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 15:02:47,485 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+INFO 2025-02-15 15:04:40,755 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/users/admin.py changed, reloading.
+INFO 2025-02-15 15:04:42,053 autoreload Watching for file changes with StatReloader
+INFO 2025-02-15 15:05:11,116 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/users/admin.py changed, reloading.
+INFO 2025-02-15 15:05:12,426 autoreload Watching for file changes with StatReloader
+WARNING 2025-02-15 15:06:05,966 log Not Found: /favicon.ico
+WARNING 2025-02-15 15:06:17,496 log Not Found: /favicon.ico
+WARNING 2025-02-15 15:06:22,719 log Not Found: /favicon.ico
+ERROR 2025-02-15 15:06:30,286 log Internal Server Error: /admin/users/user/1/change/
+Traceback (most recent call last):
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/contrib/admin/options.py", line 839, in get_form
+    return modelform_factory(self.model, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/forms/models.py", line 654, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/forms/models.py", line 334, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) ( wisrod_account_id) specified for User
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/contrib/admin/options.py", line 718, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 241, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1964, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/unfold/admin.py", line 451, in changeform_view
+    return super().changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1820, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1855, in _changeform_view
+    ModelForm = self.get_form(
+                ^^^^^^^^^^^^^^
+  File "/home/chris/Documents/GitHub/instafin-chatbot/.venv/lib/python3.12/site-packages/django/contrib/admin/options.py", line 841, in get_form
+    raise FieldError(
+django.core.exceptions.FieldError: Unknown field(s) ( wisrod_account_id) specified for User. Check fields/fieldsets/exclude attributes of class CustomUserAdmin.
+WARNING 2025-02-15 15:06:30,411 log Not Found: /favicon.ico
+INFO 2025-02-15 15:06:57,463 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/users/admin.py changed, reloading.
+INFO 2025-02-15 15:06:58,814 autoreload Watching for file changes with StatReloader
+INFO 2025-02-15 15:07:39,290 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/users/admin.py changed, reloading.
+INFO 2025-02-15 15:07:40,657 autoreload Watching for file changes with StatReloader
+WARNING 2025-02-15 15:07:46,630 log Not Found: /favicon.ico
+WARNING 2025-02-15 15:07:51,017 log Not Found: /favicon.ico
+WARNING 2025-02-15 15:08:07,584 log Not Found: /favicon.ico
+DEBUG 2025-02-15 15:09:33,423 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 15:09:34,425 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-15 15:09:34,429 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 15:09:35,346 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-15 15:09:38,705 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 15:09:39,750 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+INFO 2025-02-15 15:10:10,139 autoreload /home/chris/Documents/GitHub/instafin-chatbot/instafin_backend/facebook_messanger/states.py changed, reloading.
+INFO 2025-02-15 15:10:11,389 autoreload Watching for file changes with StatReloader
+DEBUG 2025-02-15 15:10:33,422 connectionpool Starting new HTTPS connection (1): wisrodtraining.instafin.info:443
+DEBUG 2025-02-15 15:10:34,330 connectionpool https://wisrodtraining.instafin.info:443 "POST /submit/instafin.LookupClient/client/lookup HTTP/1.1" 404 None
+DEBUG 2025-02-15 15:10:34,354 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 15:10:35,353 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139
+DEBUG 2025-02-15 15:10:35,357 connectionpool Starting new HTTPS connection (1): graph.facebook.com:443
+DEBUG 2025-02-15 15:10:36,355 connectionpool https://graph.facebook.com:443 "POST /v12.0/me/messages?access_token=EAAXfF7zWT4IBOybWrIqtsEP7dy3AzioLKmYNHIRXEhUSXV0J7RsweZBghrqkh33ufBjTzJU7kxQkkWYMFZBhpUbPQlAphHtIV1R2YBvf27PAJbTQVUWHyPoZCBnQWKwBt2OuZBz9eHIe3DDg0I8LHoScWnHANfPoy9fBOH9mZCf1zzt02tkP1xyMXmgXhNXZBSIQZDZD HTTP/1.1" 200 139

@@ -23,8 +23,12 @@ TWILIO_WHATSAPP_NUMBER = env('TWILIO_WHATSAPP_NUMBER')
 # Instafin API Settings
 INSTAFIN_API_BASE_URL = env('INSTAFIN_API_BASE_URL') 
 INSTAFIN_API_USERNAME = env('INSTAFIN_API_USERNAME')  
-INSTAFIN_API_PASSWORD = env('INSTAFIN_API_PASSWORD')  
+INSTAFIN_API_PASSWORD = env('INSTAFIN_API_PASSWORD') 
 
+
+# Facebook Messanger Creds
+PAGE_ACCESS_TOKEN = env('PAGE_ACCESS_TOKEN')
+VERIFY_TOKEN =env('VERIFY_TOKEN')
 
 INSTALLED_APPS = [
     "unfold",
@@ -43,6 +47,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'channels',
     'rest_framework',
+    'facebook_messanger'
 ]
 
 MIDDLEWARE = [
@@ -88,6 +93,12 @@ DATABASES = {
     }
 }
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'wisrod_cache_db'
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

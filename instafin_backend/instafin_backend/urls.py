@@ -13,4 +13,6 @@ urlpatterns = [
     path('monitoring/', include('monitoring.urls')),
     path('loans/', include('loan_management.urls')),
     path('communications/', include('communications.urls')),
+    path('fb-messanger/', include('facebook_messanger.urls'))
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

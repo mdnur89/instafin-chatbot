@@ -11,7 +11,7 @@ class CustomUserAdmin(ModelAdmin):
     add_form = CustomUserCreationForm
     form = CustomUserChangeForm
     model = User
-    list_display = ('email', 'phone_number', 'is_staff', 'is_active', 'is_verified')
+    list_display = ('email', 'phone_number','wisrod_account_id', 'is_staff', 'is_active', 'is_verified')
     list_filter = ('is_staff', 'is_active', 'is_verified')
     search_fields = ('email', 'phone_number')
     ordering = ('email',)
